@@ -1,0 +1,228 @@
+<template id="icon">
+	<i class="fa${style} fa-${name}"></i>
+</template>
+
+<template id="layeredicons">
+	<span class="fa-layers fa-fw">${icons}</span>
+</template>
+		
+<template id="layeredcounter">		
+	<span class="fa-layers-counter">${value}</span>
+</template>
+
+<template id="button">
+	<a type="${type}" id="${id}" href="${href}" onclick="${onclick}" class="roth-button" role="button" title="${title}" ${attributes}>
+		<span>
+			${caption}${icon}
+		</span>
+	</a>
+</template>
+
+<!--  
+	Tabset:
+	- onchange - function(href, pageId)
+ -->
+<template id="tabset">
+	<div class="roth-tabset ${fullwidth}" id="${id}" onselect="${onselect}">
+		<ul class="${fullwidth}">
+			${tabs}
+		</ul>
+	</div>
+</template>
+
+<!-- 
+	Tab: 
+	- index - The ordinal position of the tab, starting with 0.
+	- page - The page ID, aka the id of the container (div tag) representing the page.
+	- href - The action to call.
+ -->
+<template id="tab">
+	<input name="_${id}" type="radio" value="${index}" tabindex="-1" ${checked} aria-hidden="true"/><li page="${pageid}">
+		<a href="${href}" onclick="if (isMobile) this.scrollIntoView({behavior: 'smooth', inline: 'center'});
+		                           let p = this.parentNode; 
+		                           p.previousElementSibling.click();
+		                           Roth.tabset.doSelect('${id}', p.getAttribute('page'), this.href);
+		                           return false;" role="tab" title="${title}">
+			<span>
+				${icon}${caption}
+			</span>
+		</a>
+	</li>
+</template>
+
+<template id="menu">
+	<div class="jtab" id="autogen21819083390">
+		<ul onclick="Roth.getDialog('wait').wait(); Roth.tabset.getPage(this, '_method=AJAX')">
+			{ITEMS}
+		</ul>
+	</div>
+</template>
+
+<template id="menuitem">
+	<li onmouseup="rtmu(this)" page="domainlist" action="/Roth/Domain/load" class="left">
+		<a>
+			{IMAGE}<span>{CAPTION}</span>
+		</a>
+		{MENU}
+	</li>
+</template>
+
+<template id="labeledinput">
+	<div class="roth-wrap ${required} ${norender}" ${attributes}>
+		<label for="${id}" title="${title}">${label}</label><br/>
+		${input}
+	</div>
+</template>
+
+<template id="textbox">
+	<div class="roth-input" ${size}>
+		<input type="${type}" id="${id}" name="${name}" value="${value}" ${attributes}>
+	</div>
+</template>
+
+<template id="lookup">
+	<div class="roth-input roth-lookup" ${size}>
+		<input type="text" id="${id}" name="${name}" value="${value}" ${attributes}>
+		${icon}
+	</div>
+</template>
+
+<template id="file">
+	<div class="roth-input">
+		<input id="${id}Filename" type="hidden" name="${nameFilename}" value="${valueFilename}">
+		<input id="${id}" type="file" name="${name}" accept="${accept}" onchange="this.nextElementSibling.innerText = extractFilename(this.value);">
+		<label for="${id}">${valueFilenameLabel}</label>
+		<div title="Clear value." onclick="_$('${id}Filename').value = ''; this.previousElementSibling.innerHTML = span('Choose a file...', 'color: gray;');"><i class="fas fa-times"></i></div>
+	</div>
+</template>
+
+<template id="select">
+	<div class="roth-input" ${size}>
+	    <input id="${id}" type="hidden" name="${name}" value="${value}"/>
+		<select id="__${id}" name="__${name}" value="${value}" onchange="_$('${id}').value = getValue(this); ${onchange}" ${attributes}>
+			${options}
+		</select>
+		<i class="fas fa-caret-down"></i>
+	</div>
+</template>
+
+<template id="textarea">
+	<div class="roth-input textarea" ${size}>
+		<textarea id="${id}" name="${name}" ${attributes}>${value}</textarea>
+	</div>
+</template>
+
+<template id="codemirror">
+	<div class="roth-input" ${size}>
+		<textarea class="roth-codemirror" id="${id}" name="${name}" ${attributes}>${value}</textarea>
+	</div>
+</template>
+
+<template id="quill">
+	<div class="roth-input quill" ${size}>
+		<div id="${id}_quill" ${attributes}></div>
+		<input id="${id}" type="hidden" name="${name}" value="${value}">
+	</div>
+</template>
+
+<template id="tinymce">
+	<div class="roth-input tinymce" ${size}>
+		<textarea class="roth-tinymce" id="${id}" name="${name}" ${attributes}>${value}</textarea>
+	</div>
+</template>
+
+<template id="checkbox">
+	<div class="roth-check">
+		<input id="${id}" type="hidden" name="${name}" value="${value}"/>
+		<input id="__${id}" type="checkbox" name="__${name}" ${attributes} onclick="if (this.getAttribute('readonly')) return false; _$('${id}').value = this.checked ? '${true}' : '${false}'; ${onclick}"/><label for="__${id}" title="${title}">
+			<div>
+				<i class="fas fa-check"></i>
+			</div>
+		</label>
+		<label for="__${id}">${label}</label>
+	</div>
+</template>
+
+<template id="radiogroup">
+	<div class="roth-radio-group" ${attributes}><label>${label}</label><br/>
+	    ${options}
+	    <input type="text" style="display: none;" id="${id}" name="${name}" value="${value}" onchange="${onchange}">
+	</div>
+</template>
+
+<template id="radio">
+	<div class="roth-radio">
+		<input id="__${id}${index}" type="radio" name="__${name}" value="${value}" onclick="if (this.getAttribute('readonly')) return false; let input = _$('${id}'); input.value = this.value; input.onchange(); ${onclick}" ${attributes}/><label for="__${id}${index}">
+			<div>
+				<i class="fas fa-circle"></i>
+			</div>
+		</label>
+		<label for="__${id}${index}">${label}</label>
+	</div>
+</template>
+
+<template id="menuitem">
+	<li>
+		<a id="${id}" href="${href}" onclick="if (this.href !== '#') this.blur(); ${onclick}">
+			<span>
+				<div class="item-icon">${itemicon}</div><span>${caption}</span>${dropicon}
+			</span>
+		</a>
+		${dropmenu}
+	</li>
+</template>
+
+<!-- <i class="fas fa-caret-down"></i> or <i class="fas fa-caret-right"></i> -->
+
+<template id="dropmenu">
+	<div class="roth-dropmenu ${icons}">
+		<ul>
+			${items}
+		</ul>
+	</div>
+</template>
+
+<template id="menu">
+	<div class="roth-menu ${right}" id="${id}">
+		<ul>
+			${items}
+		</ul>
+	</div>
+</template>
+
+<!-- <i class="fas fa-bars"></i> -->
+
+<template id="iconmenu">
+	<div class="roth-iconmenu ${right}">
+		<a id="${id}" href="#" onclick="return false;">
+			<span>
+				${menuicon}<span>${caption}</span>${dropicon}
+			</span>
+		</a>
+		<div class="roth-dropmenu ${icons}">
+			<ul>
+				${items}
+			</ul>
+		</div>
+	</div>
+</template>
+
+<template id="slidergrid">
+	<div id="${id}" class="slider-grid ${orientation}">
+		<div ${leftvisible} class="${leftfixed}">
+			<div id="${leftid}" class="${leftcollapsed} ${leftclass}" style="${leftmin} ${leftmax} ${leftsize} padding: ${leftpadding};" data-resize-step="${leftstep}">
+				${leftcontent}
+			</div>
+			<div class="collapse" onclick="Roth.slider.toggle(event, true);"><i class="fas fa-angles-left"></i><i class="fas fa-angles-right"></i></div>
+		</div>
+		<div ${leftvisible}><div class="testone" onmousedown="Roth.slider.down(event, true);"></div></div>
+		<div><div id="${centerid}" class="${centerclass} ${rightfixed}" style="padding: ${centerpadding};">${centercontent}</div></div>
+		<div ${rightvisible}><div class="testtwo" onmousedown="Roth.slider.down(event, false);"></div></div>
+		<div ${rightvisible}>
+			<div id="${rightid}" class="${rightcollapsed} ${rightclass}" style="${rightmin} ${rightmax} ${rightsize} padding: ${rightpadding};" data-resize-step="${rightstep}">
+				${rightcontent}
+			</div>
+			<div class="collapse" onclick="Roth.slider.toggle(event, true);"><i class="fas fa-angles-left"></i><i class="fas fa-angles-right"></i></div>
+		</div>
+	</div>
+</template>

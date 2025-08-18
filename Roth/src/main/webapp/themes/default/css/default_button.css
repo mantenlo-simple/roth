@@ -1,0 +1,73 @@
+/*
+Copyright 2010 James M. Payne
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ */
+
+.roth-button, .roth-button * {
+	display: inline-block;
+	user-select: none;
+}
+.roth-button {
+	border: 1px solid #777;
+	border-right: 1px solid #444;
+	border-bottom: 1px solid #444;
+	border-radius: 5px;
+	margin: 0; /* 0 8px 0; */
+	cursor: pointer;
+	text-decoration: none;
+	outline: none;
+	font-weight: 400;
+	vertical-align: bottom;
+}
+.roth-button + .roth-button {
+	margin-left: 4px;
+}
+.roth-wrap + .roth-button {
+	margin-left: 7px;
+}
+.roth-button:focus {
+	border: 2px solid #77a;
+	border-right: 2px solid #448;
+	border-bottom: 2px solid #448;
+}
+.roth-button > span {
+	background: linear-gradient(#fff 0%, #eee 20%, #eee 90%, #ddd 100%);
+	border: 1px solid #ddd;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+	border-radius: 4px;
+	padding: 6px 10px 6px 10px;
+	color: black;
+	white-space: nowrap;
+}
+.roth-button:focus > span {
+	padding: 5px 9px 5px 9px;
+}
+.roth-button > span:hover {
+	background: linear-gradient(#fff 0%, #fff 20%, #eee 90%, #eee 100%);
+}
+.roth-button > span:active {
+	background: linear-gradient(#eee 0%, #ddd 20%, #ddd 90%, #ccc 100%);
+}
+.roth-button > span > span {
+}
+.roth-button > span > span + svg {
+	margin: 0 0 0 8px;
+}
+.disabled, .disabled * {
+	border-color: #ddd !important;
+	background: whitesmoke !important;
+	color: silver !important;
+}
+			

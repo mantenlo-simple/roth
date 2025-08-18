@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Extension-Name: Roth Library
+Specification-Version: 2025 (7.0)
+Implementation-Version: 2025.1 (7.0.1)

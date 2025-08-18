@@ -1,0 +1,5 @@
+Column 1,Column 2,Column 3,Column 4,Column 5
+1,2019-12-31,"This is a string
+with a couple
+of carriage returns",2019-12-31 14:31:25,23.4
+2,2019-12-31,This is a simple string,2019-12-31 14:32:41,0.258

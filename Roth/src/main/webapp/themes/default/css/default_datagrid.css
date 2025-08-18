@@ -1,0 +1,304 @@
+/* Data Grid */
+.rgrd { /* Grid */
+	/*
+    width: 36px; 
+    height: 36px; 
+    table-layout: fixed; 
+    border-collapse: collapse;
+    */
+    border: 1px solid silver;
+    border-left: none;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    background-color: rgba(248,248,248,0.5);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: fit-content(2rem) auto fit-content(1rem);
+	grid-template-columns: 100%;
+}
+.rgrd td {
+    padding: 0;
+    position: relative;
+}
+.rgrd .jimg { font-size: 0.8em; }
+.rgrdh { /* Grid Header */
+    background: linear-gradient(white 0%, whitesmoke 3px, whitesmoke calc(100% - 3px), silver 100%);
+    grid-row: 1;
+    box-sizing: border-box;
+}
+.rgrdm { 
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	grid-row: 2;
+	border-left: 1px solid silver;
+	box-sizing: border-box;
+}
+.rgrdh .rtbl { border: none; }
+.rgrdh td { border-bottom: 1px solid gray; }
+.rgrdh .rtbl td { border-bottom: none; }
+.rgrdh .rtbl th.sort { cursor: pointer; }
+
+.rgrdg { /* Grid Gutter */
+    width: 1.4em; 
+    background-color: #E5E5E5;
+    vertical-align: top;
+}
+.rgrdgr { /* Grid Gutter Row */
+}
+.rgrdb { /* Grid Body */
+    overflow: hidden; 
+    border-left: 1px solid silver;
+    /* background-color: whitesmoke; */
+}
+.rgrdf { /* Grid Footer */
+    /*height: 1.4em;*/
+    padding: 0.5em 0.3em;
+    background: linear-gradient(white 0%, whitesmoke 3px, whitesmoke calc(100% - 3px), #ccc calc(100% - 1px), silver 100%);
+    color: #135;
+    border: 1px solid silver;
+    border-bottom: none;
+    border-right: none;
+    grid-row: 3;
+    box-sizing: border-box;
+}
+.rgrdf-empty {
+	height: 1px;
+	padding: 0;
+}
+.rgrdf > div:first-child {
+	float: left;
+	width: calc(100% - 16px);
+}
+.rgrdf > div:nth-child(2) {
+	float: right;
+	width: 16px;
+}
+.rgrdf td { border-top: 1px solid silver; }
+.rgrdp { /* Grid Pager */
+    width: 25em;
+    white-space: nowrap;
+    overflow-x: hidden;
+    cursor: default;
+    padding: 0.1em 0 1px 0.3em;
+}
+.rgrdp svg { cursor: pointer; }
+.rgrdp .jseparator { cursor: default; }
+.rgrdp .disabled .jimg { cursor: default; }
+.rgrdp input[type = "text"] { 
+    border: 0.1em solid silver; 
+    margin: -0.1em 0 0 0; 
+    width: 30px; 
+    font-size: 1em;
+    text-align: center; 
+    padding: 0;
+    
+}
+.rgrds:before { /* Grid Sizer */
+    margin-right: 2px; 
+    width: 16px; 
+    height: 16px; 
+    /* background: url('../../images/dragsize.png') no-repeat bottom right; */
+    content: "\21F2"; 
+    cursor: se-resize;
+}
+/* Table */
+.rtbl { /* Table */
+    table-layout: fixed;
+    width: 1px; 
+    height: 1px;
+    margin: 0; 
+    padding: 0; 
+    border-collapse: collapse; 
+    border: 1px solid gray; 
+    border-top: 1px solid silver; 
+    border-left: none;
+}
+.rtbl th { 
+    padding: 0.5em 0.5em 0.6em 0.5em; /*0 5px 0 3px;*/ 
+    text-align: left; 
+    background: transparent; 
+    border-left: 0.1em solid silver; 
+    /*overflow: hidden;*/
+    white-space: normal /*nowrap*/;
+    /*height: 1.4em;*/
+    /* height: 2.4em; */
+    font-weight: 500;
+}
+@-moz-document url-prefix() {
+    /* Firefox (Mozilla) Only */
+   /* .rtbl th { height: 19px; } */ 
+}
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+    /* Opera Only */ 
+    .rtbl th { height: 19px; } 
+}
+.rtbl th.resize { 
+  /*  background: url('../../images/dragwidth.png') top right no-repeat; */ 
+}
+.rtbl th .rtd { 
+	white-space: normal; 
+	overflow-x: hidden;
+	position: relative;
+}
+.rtdsizer {
+	float: right;
+	display: none;
+	cursor: col-resize;
+	opacity: 0.5;
+	position: absolute;
+	right: 0;
+	top: calc((100% - 1rem)/2);
+	padding: 0 4px;
+	/*
+	background: #5555;
+	border-radius: 0.3em;
+	*/
+}
+th:hover .rtdsizer {
+	display: block;
+}
+.disabled th.resize { background: none; }
+.rtbl td { 
+    border-left: 1px solid gainsboro; 
+    border-top: 1px solid gainsboro;
+    overflow-x: hidden; 
+    /*
+    overflow: hidden;
+    white-space: nowrap;
+    */
+    position: relative;
+    /* height: 1.4em; */
+}
+@-moz-document url-prefix() {
+    /* Firefox (Mozilla) Only */
+    .rtbl td { height: 21px; } 
+}
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+    /* Opera Only */ 
+    .rtbl td { height: 21px; } 
+}
+.rgrd .rtbl td { 
+    /*padding: 0 3px;*/ 
+    padding: 0.4em 0.5em;
+}
+.rtbl .even { 
+    background-color: rgba(255,255,255,0.5); 
+}
+.rtbl .odd { 
+    background-color: rgba(230,230,230,0.5); 
+}
+.rscr .rtbl tr:hover { 
+    background-color: gray; 
+    cursor: pointer; 
+}
+.disabled tr:hover td { 
+    background: none; 
+    cursor: default; 
+}
+.rtbl .highlighted { 
+    background-color: dimgray; 
+    color: white; 
+}
+.disabled .highlighted { 
+    background-color: silver; 
+    color: gray;
+}
+.rtd { 
+	width: 100%; 
+	/*
+	white-space: nowrap; 
+	*/
+	overflow-x: hidden;
+	position: initial;
+	padding-bottom: 1px;
+}
+.rtd-clip {
+	overflow-y: hidden;
+}
+.rsrch { background-color: #FBB; }
+.rsrchi { background-color: #F66; }
+.rthz {
+    width: 7px;
+    height: 18px;
+    position: absolute;
+    background: gray;
+    opacity: 0.5;
+    cursor: col-resize;
+}
+.rthi {
+    height: 32px;
+    width: 16px;
+    position: absolute;
+}
+.rthi:after { 
+	content: "\2191"; /* Up Arrow */
+	font-size: 2.8em;
+	font-weight: bold;
+	color: firebrick;
+	text-shadow: 0 0 0.3em black;
+}
+.rthid { background-position: -176px -128px; }
+.rths {
+    position: absolute;
+    background: gray;
+    opacity: 0.5;
+    cursor: grabbing;
+}
+.rtreelines {
+	color: darkgray;
+	
+}
+.rscrh {
+	overflow: hidden;
+}
+.rscr {
+	overflow: auto;
+	height: 100%;
+	margin-left: -1px;
+}
+.rdgbreak {
+	height: 0.5em;
+}
+
+.grid-conf-container {
+	display: grid;
+	grid-template-columns: auto auto;
+	/*if Mobile {*/
+	grid-template-columns: auto;
+	grid-template-rows: auto auto;
+	/*}*/
+	grid-gap: 10px;
+}
+.grid-conf-container > div:first-child {
+	grid-column: 1;
+	/*if Mobile {*/
+	grid-column: 1;
+	grid-row: 2;
+	/*}*/
+}
+.grid-conf-container > div:nth-child(2) {
+	grid-column: 2;
+	/*if Mobile {*/
+	grid-column: 1;
+	grid-row: 1;
+	/*}*/
+}
+.grid-conf-fields {
+	margin-top: 6px;
+	width: 250px; 
+	height: 176px; 
+	overflow-y: auto; 
+	border: 1px solid silver;
+}
+.grid-conf-fields > div {
+	padding: 6px 5px 0 5px;
+}
+.grid-conf-fields > .even {
+	background: white;
+}
+.grid-conf-fields > .odd {
+	background: whitesmoke;
+}

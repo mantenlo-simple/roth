@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Cache-Control" content="no-store,no-cache,must-revalidate"> 
+		<meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="-1">
+        <meta name="viewport" content="width=360">
+        <title>PH_TITLE</title>
+        <link href="PORTAL_ROOT/images/favicon.png" type="image/png" rel="shortcut icon"/>
+        <link type="text/css" rel="stylesheet" href="PORTAL_ROOT/css/roth-base.css"/>
+		<link type="text/css" rel="stylesheet" href="PORTAL_ROOT/fonts/font-awesome/css/svg-with-js.min.css"/>
+		<link type="text/css" rel="stylesheet" href="PORTAL_ROOT/dtsel/dtsel.css"/>
+		<script type="text/javascript">
+			let FontAwesomeConfig = { autoAddCss: false }; 
+			let contextRoot = 'CONTEXT_ROOT'; 
+			let portalRoot = 'PORTAL_ROOT';
+			let setRootDim = () => {
+				document.documentElement.style.setProperty("--screen-width", window.innerWidth);
+				document.documentElement.style.setProperty("--screen-height", window.innerHeight);
+			};
+			window.addEventListener("load", () => { setRootDim(); });
+			window.addEventListener("resize", () => { setRootDim(); });
+		</script>
+		<script type="text/javascript" src="PORTAL_ROOT/js/Length.min.js"></script>
+		<script type="text/javascript" src="PORTAL_ROOT/js/rothutil.js"></script>
+		<script type="text/javascript" src="PORTAL_ROOT/js/roth.js"></script>
+		<script type="text/javascript" src="PORTAL_ROOT/js/rothportal.js"></script>
+		<script type="text/javascript" src="PORTAL_ROOT/js/rothmenu.js"></script>
+		<script type="text/javascript" src="PORTAL_ROOT/dtsel/dtsel.js"></script>
+		<script defer src="PORTAL_ROOT/fonts/font-awesome/js/all.min.js"></script>
+PH_THEME
+	</head>
+	<body PH_ONLOAD class="PH_CLASS fontawesome-i2svg-pending">
+PH_CONTENT
+	</body>
+</html>

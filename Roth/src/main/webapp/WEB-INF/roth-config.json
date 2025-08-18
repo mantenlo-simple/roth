@@ -1,0 +1,112 @@
+{
+	"roles": [
+		{ 
+			"roleName": "DomainAdmin", 
+			"description": "Administers users and groups within a domain.", 
+			"updatedBy": "admin@default",
+			"updatedDts": "2010-10-12T00:00:00" 
+		}, { 
+			"roleName": "ExternalUser", 
+			"description": "External User", 
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00" 
+		}, { 
+			"roleName": "GroupAdmin", 
+			"description": "Administers users within a group.", 
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00" 
+		}, { 
+			"roleName": "InternalUser", 
+			"description": "Internal User", 
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00" 
+		}, { 
+			"roleName": "manager-gui", 
+			"description": "Tomcat Manager - Access to the HTML interface", 
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00" 
+		}, { 
+			"roleName": "NewsAdmin", 
+			"description": "Administers news items.", 
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00" 
+		}, { 
+			"roleName": "PortalAdmin", 
+			"description": "Administers portal configuration.", 
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00" 
+		}, { 
+			"roleName": "SecurityAdmin", 
+			"description": "Administers domains, users, and roles globally.", 
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00" 
+		}, { 
+			"roleName": "SystemAdmin", 
+			"description": "Administers system resources.", 
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00" 
+		}
+	],
+	"portlets": [
+		{ 
+			"portletName": "Roth Home", 
+			"portletUri": "/Roth/Home", 
+			"description": "Roth Home", 
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00", 
+			"roles": [ "Anonymous", "Authenticated" ] 
+		}, { 
+			"portletName": "Roth Configuration", 
+			"portletUri": "/Roth/configuration/index.jsp", 
+			"description": "Portal and Security configuration", 
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00", 
+			"roles": [ "DomainAdmin", "PortalAdmin", "SecurityAdmin" ] 
+		}
+	],
+	"books": [
+		{
+			"bookName": "Roth Home",
+			"bookTitle": "Roth Home",
+			"description": "Roth Home Page",
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00"
+		}, {
+			"bookName": "Roth Admin",
+			"bookTitle": "Admin",
+			"description": "Roth Admin Menu",
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00", 
+			"parentName": "Roth Home",
+			"sequence": 1
+		}
+	],
+	"pages": [
+		{
+			"bookName": "Roth Home",
+			"portletName": "Roth Home",
+			"pageTitle": "Home",
+			"sequence": 0, 
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00"
+		}, {
+			"bookName": "Roth Admin",
+			"portletName": "Roth Configuration",
+			"pageTitle": "Portal Configuration",
+			"sequence": 0, 
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00"
+		}
+	],
+	"themes": [ "default mobi.thm", "default.thm" ],
+	"desktops": [
+		{
+			"desktopName": "Roth",
+			"desktopTitle": "Roth Home",
+			"bookName": "Roth Home",
+			"themeName": "Default", 
+			"updatedBy": "admin@default", 
+			"updatedDts": "2010-10-12T00:00:00"
+		}
+	]
+}

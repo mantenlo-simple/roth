@@ -1,0 +1,130 @@
+/* Dialogs */
+.dialog {
+	position: absolute;
+    background: white;
+    border: 0.2em solid rgb(72,128,72);
+    border-radius: 0.2em;
+    box-shadow: 0.2em 0.2em 0.5em black;
+    width: calc(100% - 0.4em);
+    height: calc(100% - 0.4em);
+}
+.dialog-header {
+	padding: 0.7em 0.7em 0.3em 0.7em;
+	width: calc(100% - 1.4em);
+}
+.dialog-body {
+	padding: 0.7em;
+	width: calc(100% - 1.4em);
+	height: calc(100% - 4.3em);
+}
+.dialog-footer {
+	width: 100%;
+}
+.dialog-header .caption {
+	float: left;
+    cursor: move;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: black;
+    text-shadow: 0 0 0.4em #ddd;
+    vertical-align: middle;
+    padding-bottom: 0.4em;
+    border-bottom: 0.2em solid rgba(72,128,72,0.9);
+    width: 100%;
+}
+.dialog-header .close {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5em;
+    margin: -0.2em 0.1em -0.6em 0.6em;
+    color: #222;
+    text-shadow: 0 0 0.1em #ddd;
+}
+.dialog-header .close:hover { 
+	color: dimgray;
+}
+.dialog-header .close:active { 
+	color: dimgray;
+}
+.modal {
+    background: rgba(0,0,0,0.15);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* Dialogs */
+.jdlg { 
+    position: absolute;
+    /*background: linear-gradient(rgba(64,144,64,0.9) 0%, rgba(72,128,72,0.9) 0.4em, rgba(72,128,72,0.9) 0.8em, rgba(32,64,32,0.9) 100%);*/
+    background: white;
+    border: none;
+    border-top: 0.2em solid rgba(72,128,72,0.9);
+    border-bottom: 0.2em solid rgba(72,128,72,0.9);
+    /*border-right: 0.1em solid #222;
+    border-bottom: 0.1em solid #222;*/
+    box-shadow: 0 0.2em 0.5em black;
+}
+.jdlg_tbl {
+    border-collapse: collapse; 
+    margin: 0; 
+    padding: 0;
+    width: 100%;
+}
+.jdlg_tl {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: black;
+    text-shadow: 0 0 0.4em #ddd;
+    padding: 0.5em;
+    cursor: move;
+    vertical-align: middle;
+}
+.jdlg_tl .jimg { margin: 0.1em 0.4em 0 0; }
+.jdlg_tr { text-align: left; }
+.jdlg_tr > .fa { color: #222; text-shadow: 0 0 0.1em #ddd; }
+.jdlg_tr > .fa:after { content: "I"; color: transparent; text-shadow: none; } 
+.jdlg_tr {}
+.jdlg_ml {}
+.jdlg_mr { padding: 0 0.5em 0.5em 0.5em; }
+.jdlg_mr .main_content {
+    position: relative;
+    background-color: white;
+    /*border: 0.1em solid #888;*/
+    border-top: 0.2em solid rgba(72,128,72,0.9);
+    border-radius: 0.2em;
+    padding: 0.5em 0 0.1em 0;
+    *height: 0.01%; 
+} /* IE 'disappearing text' bug fix; thanks to plone.org */
+.jdlg_bl { display: none; }
+.jdlg_br {}
+.jdlg_close {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5em;
+    margin: -0.2em 0.1em -0.6em 0.6em;
+    color: #222;
+    text-shadow: 0 0 0.1em #ddd;
+}
+.jdlg_close:hover { color: dimgray;}
+/* Modal */
+.jmodal {
+    background-color: black;
+    opacity: 0.15;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}

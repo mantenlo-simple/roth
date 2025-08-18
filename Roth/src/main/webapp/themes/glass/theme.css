@@ -1,0 +1,342 @@
+/*
+Copyright 2010 James M. Payne
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ */
+html {
+	width: 100%;
+	height: 100%;
+}
+document {
+	height: 100%;
+}
+body {
+    font-family: Trebuchet MS, Arial, Verdana;
+    font-size: 13px;
+    background-image: url(../../images/marb078.jpg);
+    padding: 0px;
+    width: 1012px;
+    margin: 0px auto;
+}
+
+
+.desktop_title {
+    float: right;
+    height: 32px;
+    color: white;
+    font-size: 26px;
+    text-shadow: 2px 2px 2px black;
+    padding: 0 28px 0 0;
+    text-align: right;
+    font-style: italic;
+}
+.portlet {
+    float: right;
+    font-size: 16px;
+    margin: -1px 0 0 0;
+}
+
+
+.main {
+    background-image: url(glassframe_middle_left.png);
+    background-repeat: repeat-y;
+    padding: 0 0 0 19px;
+    margin: 0px;
+    color: black;
+}
+.main_right { 
+    border: none;
+    background: url(glassframe_middle_right.png);
+    background-position: right;
+    background-repeat: repeat-y;
+    width: 977px;
+    padding: 0 23px 0 0;
+}
+.main_content {
+    background: whitesmoke;
+    padding: 8px;
+}
+
+.header {
+    height: 76px;
+}
+.header_left { 
+    background: url(glassframe_left.png) top left no-repeat; 
+    height: 76px;
+    padding-left: 19px;
+    width: auto;
+}
+.header_right {
+    background: url(glassframe_right.png) top right no-repeat;
+    height: 60px;
+    width: 1000px;
+    padding-top: 16px;
+}
+.logo {
+    background: url(../../images/logo.png) top left no-repeat; 
+    height: 60px;
+    width: 285px;
+    float: left;
+}
+
+.footer {
+    font-size: 10px; 
+    font-weight: normal; 
+    text-align: center;
+    background: url(glassframe_left.png) bottom left no-repeat; 
+    border: 1px solid #455c7e;
+    height: 36px;
+    width: auto;
+    border: none;
+    padding: 0 0 0 19px;
+    color: white;
+}
+.footer_right { 
+    background: url(glassframe_right.png) bottom right; 
+    height: 26px;
+    float: none;
+    width: 981px;
+    padding: 5px 19px 5px 0px;
+}
+.footer a { color: white; text-decoration: none; }
+.footer a:hover { color: #9BF; text-decoration: none; }
+
+.menu_left {
+    height: 22px;
+    background: #3f494d;
+    padding: 0 0 0 8px;
+}
+.menu_right {
+    height: 22px;
+    background: #3f494d;
+    padding: 0 8px 0 0;
+}
+div.menu {
+    border: none;
+    background: none;
+}
+.title_left {
+    height: 23px;
+    background: #363f42;
+    padding: 0 0 0 19px;
+}
+.title_right {
+    height: 23px;
+    background: #3f494d;
+    padding: 0 19px 0 0;
+}
+
+/* Tabset */
+.jtab {
+    border: none;
+	background: url(line.png) repeat-x left 11px;
+    height: 26px;
+    padding: 0 0 0 9px;
+    font-family: Trebuchet MS;
+    font-size: 15px;
+    color: black;
+}
+.jtab ul { 
+	list-style: none; 
+    padding: 0px;
+    margin: 0px; 
+    display: block;
+    cursor: pointer;
+}
+.jtab li {
+    border: none;
+    border-radius: 0px;
+    background: url(tab_left_mac.png) no-repeat left top;
+    height: 26px;
+    padding: 0 0 0 3px;
+    
+    display: block;
+    float: left;
+    margin: 0px;
+}
+.jtab li.left {
+	border: none;
+	border-radius: 0px;
+    background: url(btn_left_mac.png) no-repeat left top;
+    padding: 0 0 0 12px;
+}
+.jtab div {
+	border: none;
+	border-radius: 0px;
+    background: url(tab_right_mac.png) no-repeat right top;
+    height: 25px;
+    padding: 1px 6px 0 4px;
+}
+li.left div { padding-left: 0px; }
+.jtab div.right {
+	border: none;
+	border-radius: 0px;
+    background: url(btn_right_mac.png) no-repeat right top;
+    padding: 1px 13px 0 4px;
+}
+/* Firefox doesn't handle padding the same way as the other browsers, so... */
+.jtab li:hover { 
+	background: url(tab_left_mac.png) no-repeat left -52px;
+    color: blue; color: black;
+}
+li.left:hover { 
+	background: url(btn_left_mac.png) no-repeat left -52px;
+}
+li:hover div { background-position: right -52px; }
+li:hover div.right { background-position: right -52px; }
+.jtab li:active { 
+    background-position: left -26px; 
+    color: navy; color: black;
+}
+li:active div { background-position: right -26px; }
+li:active div.right { background-position: right -26px; }
+.jtab li.selected { 
+    background-position: left -52px; 
+    color: navy; color: black;
+}
+li.selected div { background-position: right -52px; }
+li.selected div.right { background-position: right -52px; }
+.jtab span { 
+    margin-top: 1px;     
+    /*if Chrome*/margin-top: 0px;
+}
+.jtab .jimg {
+    margin-top: 3px;
+}
+
+/* Buttons */
+.jbtn {
+    /*background: url('btn_left.png') no-repeat left top;
+    height: 24px;
+    padding: 0 0 0 7px;*/
+    
+    border: none;
+    border-radius: 0px;
+    background: url(btn_left_mac.png) no-repeat left top;
+    height: 24px;
+    padding: 0 0 0 12px;
+    
+    margin: 0 3px 0 0;
+    display: block;
+    float: left;
+    /*font-family: Trebuchet MS;*/
+    font-size: 15px; 
+    text-decoration: none;
+    color: black;
+}
+.jbtn > div {
+    /*background: url('btn_right.png') no-repeat right top;
+    height: 21px;*/
+    
+    border: none;
+    border-radius: 0px;
+    background: url(btn_right_mac.png) no-repeat right top;
+    height: 24px;
+    
+    padding: 2px 13px 0 0;
+    /*if Chrome*/padding-top: 3px;
+    float: left;
+    cursor: pointer;
+}
+.jbtn .jimg { margin-top: 2px; }
+
+.jbtn:visited    { color: black; }
+.jbtn:hover      { 
+	background-position: left -52px;
+	color: blue; 
+	color: black; 
+}
+.jbtn:hover > div  { 
+	background: url(btn_right_mac.png) no-repeat right -52px; 
+}
+.jbtn:active     { background-position: left -26px;  color: navy; color: black; }
+.jbtn:active > div { background-position: right -26px; }
+                                                 /* -72px; */
+.disabled            { background-position: left -78px;  color: silver; }
+.disabled > div        { background-position: right -78px; cursor: default; color: silver; }
+.disabled:hover      { background-position: left -78px; color: silver; }
+.disabled:hover > div  { background-position: right -78px; }
+.disabled:active     { background-position: left -78px; }
+.disabled:active > div { background-position: right -78px; }
+
+/* Dialogs */
+.jdlg { 
+	position: absolute;
+	border: none;
+	background: none;
+	box-shadow: none; 
+}
+.jdlg_tbl {
+    border-collapse: collapse; 
+    margin: 0px; 
+    padding: 0px;
+}
+.jdlg_tl { 
+    background: url(dlgframe_left.png) top left no-repeat; 
+    height: 42px;
+    padding: 0px;
+    padding-left: 19px;
+}
+.jdlg_tr {
+    background: url(dlgframe_right.png) top right no-repeat;
+    height: 23px;
+    width: 100%;
+    padding-top: 19px;
+    font-weight: bold;
+    color: white;
+}
+.jdlg_ml { 
+    background: url(dlgframe_middle_left.png) top left repeat-y; 
+    padding: 0px;
+    padding-left: 19px;
+}
+.jdlg_mr {
+    background: url(dlgframe_middle_right.png) top right repeat-y;
+    padding-right: 19px;
+}
+.jdlg_mr .main_content { *height: 0.01%; } /* IE 'disappearing text' bug fix; thanks to plone.org */
+.jdlg_bl { 
+    background: url(dlgframe_left.png) bottom left no-repeat;
+    height: 19px;
+    padding: 0px; 
+    padding-left: 19px;
+    display: block;
+}
+.jdlg_br {
+    background: url(dlgframe_right.png) bottom right no-repeat;
+    height: 19px;
+    width: 100%;
+}
+.jdlg_close {
+    float: right; 
+    margin-right: 19px; 
+    cursor: pointer;
+    color: #d9d9d9;
+}
+
+.jgrdh { /* Grid Header */
+    background: linear-gradient(white 0%, whitesmoke 35%, silver 100%);
+}
+.jgrdf { /* Grid Footer */
+    background: linear-gradient(white 0%, whitesmoke 35%, silver 100%);
+} 
+.jwait { background-image: url('../../images/wait_orbital.gif'); }
+fieldset { border-radius: 8px; }
+legend { color: black; border-color: silver; border-radius: 4px; background: whitesmoke url(gradient.png) repeat-x left bottom; }
+
+.aboutVersion {
+	border: none;
+}
+.aboutPageInset { 
+	background: transparent; 
+}

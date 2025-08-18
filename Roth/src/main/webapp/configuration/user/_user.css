@@ -1,0 +1,92 @@
+@charset "UTF-8";
+.user-form-grid {
+	display: grid;
+	grid-template-columns: 330px 202px;
+	grid-template-rows: auto auto;
+	gap: 6px;
+	width: calc(100% - 6px);
+}
+.user-form-grid > div {
+	background: #0001;
+	border-radius: 4px;
+	padding: 8px 8px 2px 8px;
+}
+.user-form-grid > div:first-child {
+	grid-area: 1 / 1 / span 1 / span 1;
+}
+.user-form-grid > div:nth-child(2) {
+	grid-area: 1 / 2 / span 1 / span 1;
+}
+.user-form-grid > div:nth-child(3) {
+	grid-area: 2 / 1 / span 1 / span 2;
+}
+.user-form-grid .roth-radio-group {
+	margin-top: 6px;
+}
+.user-form-grid .roth-radio-group > label {
+	display: none;
+}
+.user-form-grid .roth-radio-group > label + br {
+	display: none;
+}
+.user-profile-grid {
+	display: grid;
+	grid-template-columns: 364px 152px;
+	grid-template-rows: auto auto;
+	gap: 6px;
+	width: calc(100% - 6px);
+}
+.user-profile-grid > div {
+	border-radius: 4px;
+	padding: 0;
+}
+.user-profile-grid > div:first-child {
+	grid-area: 1 / 1 / span 1 / span 1;
+	padding-right: 8px;
+}
+.user-profile-grid > div:nth-child(2) {
+	grid-area: 1 / 2 / span 1 / span 1;
+}
+
+@media screen and (max-width: 600px) {
+	.user-form-grid {
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: auto auto auto;
+		gap: 6px;
+		width: calc(100% - 6px);
+	}
+	.user-form-grid > div {
+		background: #0001;
+		border-radius: 4px;
+		padding: 8px 8px 2px 8px;
+	}
+	.user-form-grid > div:first-child {
+		grid-area: 1 / 1 / span 1 / span 1;
+	}
+	.user-form-grid > div:nth-child(2) {
+		grid-area: 2 / 1 / span 1 / span 1;
+	}
+	.user-form-grid > div:nth-child(3) {
+		grid-area: 3 / 1 / span 1 / span 1;
+	}
+	
+	.user-profile-grid {
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: auto auto;
+		gap: 6px;
+		width: 100%;
+	}
+	.user-profile-grid > div {
+		border-radius: 4px;
+		padding: 0;
+	}
+	.user-profile-grid > div:first-child {
+		grid-area: 1 / 1 / span 1 / span 1;
+		padding-right: 0;
+	}
+	.user-profile-grid > div:nth-child(2) {
+		grid-area: 2 / 1 / span 1 / span 1;
+	}
+}

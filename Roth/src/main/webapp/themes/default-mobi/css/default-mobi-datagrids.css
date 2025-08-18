@@ -1,0 +1,193 @@
+/* Data Grid */
+.rgrd { /* Grid */
+    width: 36px; 
+    height: 36px; 
+    table-layout: fixed; 
+    border-collapse: collapse;
+    border: 0.1em solid silver;
+    border-left: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    background-color: rgba(248,248,248,0.5);
+    box-sizing: border-box;
+}
+.rgrd td {
+    padding: 0;;
+}
+.rgrd .rimg { font-size: 0.8em; }
+.rgrdh { /* Grid Header */
+    background: linear-gradient(white 0%, whitesmoke 25%, whitesmoke 75%, silver 100%);
+    height: 2em;
+}
+.rgrdh > div { height: 100%; }
+.rgrdh table { height: 100%; }
+
+
+.rgrdm { width: 100%;height: calc(100% - 4.1em); }
+.rgrdh .rtbl { border: none; }
+.rgrdh td { border-bottom: 0.1em solid gray; }
+.rgrdh .rtbl td { border-bottom: none; }
+.rgrdg { /* Grid Gutter */
+    width: 1.4em; 
+    background-color: #E5E5E5;
+    vertical-align: top;
+}
+.rgrdgr { /* Grid Gutter Row */
+}
+.rgrdb { /* Grid Body */
+    overflow: hidden; 
+    border-left: 0.1em solid silver;
+    /* background-color: whitesmoke; */
+}
+.rgrdf { /* Grid Footer */
+    height: 2em;
+    background: linear-gradient(white 0%, whitesmoke 25%, whitesmoke 75%, silver 100%);
+    color: #135;
+    border: 0.1em solid #ddd;
+} 
+.rgrdf td { border-top: 0.1em solid silver; }
+.rgrdp { /* Grid Pager */
+    width: 25em;
+    white-space: nowrap;
+    overflow-x: hidden;
+    cursor: default;
+    padding: 0.45em 0 0 0.4em;
+}
+.rgrdp .rimg { cursor: pointer; }
+.rgrdp .rseparator { cursor: default; }
+.rgrdp .disabled .rimg { cursor: default; }
+.rgrdp input[type = "text"] { 
+    border: 0.1em solid silver; 
+    margin: 0; 
+    padding: 0; 
+    width: 30px; 
+    font-size: 12px;
+    text-align: center; 
+    padding: 0.1em 0.1em 0 2px;
+}
+.rgrds { /* Grid Sizer */
+    margin-right: 0.2em; 
+    width: 1em; 
+    height: 1em; 
+    background: url('../../images/dragsize.png') no-repeat bottom right; 
+    cursor: se-resize;
+}
+/* Table */
+.rtbl { /* Table */
+    table-layout: fixed; 
+    width: 0.1em; 
+    height: 0.1em;
+    margin: 0; 
+    padding: 0; 
+    border-collapse: collapse; 
+    border: 0.1em solid gray; 
+    border-top: 0.1em solid silver; 
+    border-left: none;
+}
+.rtbl tr { height: 2rem; }
+.rtbl th { 
+    padding: 0 0.4em 0 0.3em; 
+    text-align: left; 
+    background: transparent; 
+    border-left: 0.1em solid silver; 
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 500;
+}
+@-moz-document url-prefix() {
+    /* Firefox (Mozilla) Only */
+    .rtbl th { height: 19px; } 
+}
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+    /* Opera Only */ 
+    .rtbl th { height: 19px; } 
+}
+.rtbl th.resize { 
+  /*  background: url('../../images/dragwidth.png') top right no-repeat; */ 
+}
+.rtbl th .rtd { position: relative; }
+.disabled th.resize { background: none; }
+.rtbl td { 
+    border-left: 0.1em solid gainsboro; 
+    border-top: 0.1em solid gainsboro; 
+    overflow: hidden;
+    white-space: nowrap;
+}
+@-moz-document url-prefix() {
+    /* Firefox (Mozilla) Only */
+    .rtbl td { height: 20.1em; } 
+}
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+    /* Opera Only */ 
+    .rtbl td { height: 20.1em; } 
+}
+.rgrd .rtbl td { 
+    padding: 0 0.4em 0 0.3em;  
+}
+.rtbl .even { 
+    background-color: rgba(255,255,255,0.5); 
+}
+.rtbl .odd { 
+    background-color: rgba(230,230,230,0.5); 
+}
+.rscr .rtbl tr:hover { 
+    background-color: gray; 
+    cursor: pointer; 
+}
+.disabled tr:hover td { 
+    background: none; 
+    cursor: default; 
+}
+.rtbl .highlighted { 
+    background-color: dimgray; 
+    color: white; 
+}
+.disabled .highlighted { 
+    background-color: silver; 
+    color: gray;
+}
+.rtd { width: 100%; white-space: nowrap; overflow-x: hidden; }
+.rsrch { background-color: #FBB; }
+.rsrchi { background-color: #F66; }
+.rthz {
+    width: 7px;
+    height: 18px;
+    position: absolute;
+    background: gray;
+    opacity: 0.5;
+    cursor: col-resize;
+}
+.rthi {
+    height: 32px;
+    width: 16px;
+    position: absolute;
+}
+.rthi:after { 
+	content: "\2191"; /* Up Arrow */
+	font-size: 2.8em;
+	font-weight: bold;
+	color: firebrick;
+	text-shadow: 0 0 0.3em black;
+}
+.rthid { background-position: -176px -128px; }
+.rths {
+    position: absolute;
+    background: gray;
+    opacity: 0.5;
+}
+.rtreelines {
+	color: darkgray;
+	
+}
+.rscrh {
+	overflow: hidden;
+}
+.rscr {
+	overflow: auto;
+	height: 100%;
+	margin-left: -0.1em;
+}
+.rdgbreak {
+	height: 0.5em;
+}

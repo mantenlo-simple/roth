@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<artifactId>roth-lib</artifactId>
+
+	<parent>
+        <groupId>com.roth</groupId>
+		<artifactId>roth-deployment-package</artifactId>
+        <version>7.0.1</version>
+        <relativePath>../roth-deployment-package/pom.xml</relativePath> <!-- Relative path to parent pom -->
+    </parent>
+
+	<build>
+		<plugins>
+			<plugin>
+			 	<artifactId>maven-compiler-plugin</artifactId>
+			 	<configuration>
+                    <compilerArgs>
+                    	<arg>--add-exports</arg><arg>java.management/javax.management=ALL-UNNAMED</arg>
+                        <arg>--add-exports</arg><arg>java.management/com.sun.jmx.interceptor=ALL-UNNAMED</arg>
+                        <arg>--add-exports</arg><arg>java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED</arg>
+                    </compilerArgs>
+                </configuration>
+			</plugin>
+			
+			<plugin>
+			 	<artifactId>maven-source-plugin</artifactId>
+			 	<version>3.3.1</version>
+			 	<executions>
+		        	<execution>
+			            <id>attach-sources</id>
+			            <phase>verify</phase>
+			            <goals>
+			                <goal>jar-no-fork</goal>
+			            </goals>
+			            <configuration>
+			                <includePom>true</includePom>
+			            </configuration>
+		            </execution>
+        		</executions>
+			</plugin>
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-jar-plugin</artifactId>
+		        <version>3.2.1</version>
+		        <configuration>
+					<archive>
+					    <manifestEntries>
+						    <Extension-Name>Roth Library</Extension-Name>
+							<Specification-Version>2025 (7.0)</Specification-Version>
+							<Implementation-Version>2025.1 (${project.version})</Implementation-Version>
+					    </manifestEntries>
+					</archive>
+		        </configuration>
+	        </plugin>
+	        <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-dependency-plugin</artifactId>
+		        <version>3.8.1</version>
+		        <executions>
+					<execution>
+					    <id>copy-dependencies</id>
+					    <phase>package</phase>
+					    <goals>
+					        <goal>copy-dependencies</goal>
+					    </goals>
+					    <configuration>
+					        <outputDirectory>../../apache-tomcat-11.0.9/lib.custom</outputDirectory>
+					        <overWriteReleases>false</overWriteReleases>
+					        <overWriteSnapshots>true</overWriteSnapshots>
+					        <excludeTransitive>true</excludeTransitive>
+					    </configuration>
+					</execution>
+					<execution>
+					    <id>copy</id>
+					    <phase>install</phase>
+					    <goals>
+					        <goal>copy</goal>
+					    </goals>
+					    <configuration>
+							<artifactItems>
+				                <artifactItem>
+				                  <groupId>${project.groupId}</groupId>
+				                  <artifactId>${project.artifactId}</artifactId>
+				                  <version>${project.version}</version>
+				                  <type>${project.packaging}</type>
+				                </artifactItem>
+		              		</artifactItems>
+					        <outputDirectory>../../apache-tomcat-11.0.9/lib.custom</outputDirectory>
+					        <overWriteReleases>false</overWriteReleases>
+					        <overWriteSnapshots>true</overWriteSnapshots>
+					    </configuration>
+					</execution>
+		        </executions>
+		    </plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>                                                                                                                                                       
+		<dependency>  <groupId>org.bouncycastle</groupId>                          <artifactId>bcjmail-jdk18on</artifactId>                </dependency>
+		<dependency>  <groupId>org.bouncycastle</groupId>                          <artifactId>bcpkix-jdk18on</artifactId>                 </dependency>
+		<dependency>  <groupId>org.bouncycastle</groupId>                          <artifactId>bcprov-jdk18on</artifactId>                 </dependency>
+		<dependency>  <groupId>ch.qos.logback</groupId>                            <artifactId>logback-core</artifactId>                   </dependency>
+		<dependency>  <groupId>com.google.javascript</groupId>                     <artifactId>closure-compiler</artifactId>               </dependency>
+		<dependency>  <groupId>commons-codec</groupId>                             <artifactId>commons-codec</artifactId>                  </dependency>
+		<dependency>  <groupId>org.apache.commons</groupId>                        <artifactId>commons-collections4</artifactId>           </dependency>
+		<dependency>  <groupId>commons-io</groupId>                                <artifactId>commons-io</artifactId>                     </dependency>
+		<dependency>  <groupId>org.apache.commons</groupId>                        <artifactId>commons-lang3</artifactId>                  </dependency>
+		<dependency>  <groupId>commons-logging</groupId>                           <artifactId>commons-logging</artifactId>                </dependency>
+		<dependency>  <groupId>commons-net</groupId>                               <artifactId>commons-net</artifactId>                    </dependency>
+		<dependency>  <groupId>org.apache.commons</groupId>                        <artifactId>commons-text</artifactId>                   </dependency>
+		<dependency>  <groupId>org.apache.pdfbox</groupId>                         <artifactId>fontbox</artifactId>                        </dependency>
+		<dependency>  <groupId>com.google.guava</groupId>                          <artifactId>guava</artifactId>                          </dependency>
+		<dependency>  <groupId>com.lowagie</groupId>                               <artifactId>itext</artifactId>                          </dependency> <!-- Confirm this one. -->
+		<dependency>  <groupId>com.fasterxml.jackson.core</groupId>                <artifactId>jackson-annotations</artifactId>            </dependency>
+		<dependency>  <groupId>com.github.jai-imageio</groupId>                    <artifactId>jai-imageio-core</artifactId>               </dependency>
+		<dependency>  <groupId>com.github.jai-imageio</groupId>                    <artifactId>jai-imageio-jpeg2000</artifactId>           </dependency>
+		<dependency>  <groupId>jakarta.activation</groupId>                        <artifactId>jakarta.activation-api</artifactId>         </dependency>
+		<dependency>  <groupId>org.eclipse.parsson</groupId>                       <artifactId>jakarta.json</artifactId>                   </dependency>
+		<dependency>  <groupId>org.glassfish</groupId>                             <artifactId>jakarta.json</artifactId>                   </dependency>
+		<dependency>  <groupId>jakarta.json</groupId>                              <artifactId>jakarta.json-api</artifactId>               </dependency>
+		<dependency>  <groupId>jakarta.json.bind</groupId>                         <artifactId>jakarta.json.bind-api</artifactId>          </dependency>
+		<dependency>  <groupId>jakarta.mail</groupId>                              <artifactId>jakarta.mail-api</artifactId>               </dependency>
+		<dependency>  <groupId>jakarta.servlet.jsp.jstl</groupId>                  <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>   </dependency>
+		<dependency>  <groupId>org.glassfish.web</groupId>                         <artifactId>jakarta.servlet.jsp.jstl</artifactId>       </dependency>
+		<dependency>  <groupId>jakarta.websocket</groupId>                         <artifactId>jakarta.websocket-api</artifactId>          <scope>provided</scope></dependency>
+		<dependency>  <groupId>jakarta.websocket</groupId>                         <artifactId>jakarta.websocket-client-api</artifactId>   </dependency>
+		<dependency>  <groupId>io.bit3</groupId>                                   <artifactId>jsass</artifactId>                          </dependency>
+		<dependency>  <groupId>org.jsoup</groupId>                                 <artifactId>jsoup</artifactId>                          </dependency>
+		<dependency>  <groupId>org.junit.jupiter</groupId>                         <artifactId>junit-jupiter-engine</artifactId>           <scope>test</scope></dependency>
+		<dependency>  <groupId>org.sharegov</groupId>                              <artifactId>mjson</artifactId>                          </dependency>
+		<dependency>  <groupId>com.mysql</groupId>                                 <artifactId>mysql-connector-j</artifactId>              </dependency>
+		<dependency>  <groupId>com.oracle.database.jdbc</groupId>                  <artifactId>ojdbc11</artifactId>                        </dependency>
+		<dependency>  <groupId>com.googlecode.owasp-java-html-sanitizer</groupId>  <artifactId>owasp-java-html-sanitizer</artifactId>      </dependency>
+		<dependency>  <groupId>org.apache.pdfbox</groupId>                         <artifactId>pdfbox</artifactId>                         </dependency>
+		<dependency>  <groupId>org.apache.pdfbox</groupId>                         <artifactId>pdfbox-tools</artifactId>                   </dependency>
+		<dependency>  <groupId>org.apache.poi</groupId>                            <artifactId>poi</artifactId>                            </dependency>
+		<dependency>  <groupId>org.apache.poi</groupId>                            <artifactId>poi-ooxml</artifactId>                      </dependency>
+		<dependency>  <groupId>org.apache.poi</groupId>                            <artifactId>poi-ooxml-schemas</artifactId>              </dependency>
+		<dependency>  <groupId>org.apache.pdfbox</groupId>                         <artifactId>preflight</artifactId>                      </dependency>
+		<dependency>  <groupId>org.slf4j</groupId>                                 <artifactId>slf4j-api</artifactId>                      </dependency>
+		<dependency>  <groupId>org.apache.tika</groupId>                           <artifactId>tika-core</artifactId>                      </dependency>
+		<dependency>  <groupId>org.apache.tika</groupId>                           <artifactId>tika-parsers-standard-package</artifactId>  </dependency>
+		<dependency>  <groupId>org.apache.tomcat</groupId>                         <artifactId>tomcat-catalina</artifactId>                </dependency>
+		<dependency>  <groupId>org.apache.tomcat</groupId>                         <artifactId>tomcat-catalina-ha</artifactId>             </dependency>
+		<dependency>  <groupId>org.apache.tomcat</groupId>                         <artifactId>tomcat-tribes</artifactId>                  </dependency>
+		<dependency>  <groupId>org.apache.xmlbeans</groupId>                       <artifactId>xmlbeans</artifactId>                       </dependency>
+		<dependency>  <groupId>org.apache.pdfbox</groupId>                         <artifactId>xmpbox</artifactId>                         </dependency>
+		<dependency>  <groupId>org.eclipse</groupId>                               <artifactId>yasson</artifactId>                         </dependency>
+	</dependencies>
+</project>

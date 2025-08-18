@@ -1,0 +1,184 @@
+form { margin: 0; width: 100%; height: 100%; }
+input[type="text"], input[type="password"], input[type="checkbox"], input[type="radio"], select, textarea { 
+	font-size: 1em; 
+	font-family: roboto;
+}
+input[type="text"], input[type="password"], textarea { width: calc(100% - 0.5em); }
+select { width: 100%; }
+input[type="checkbox"] { vertical-align: middle; height: 1em; width: 1em; }
+input[type="radio"] { vertical-align: middle; height: 1em; width: 1em; }
+@-moz-document url-prefix() { 
+    input[type="text"] { margin-bottom: 0.4em; margin-top: 0.1em; } 
+    input[type="password"] { margin-bottom: 0.4em; margin-top: 0.1em; } 
+}
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) { 
+    input[type="text"] { margin-bottom: 0.4em; margin-top: 0.1em; } 
+    input[type="password"] { margin-bottom: 0.4em; margin-top: 0.1em; } 
+}
+.jib {
+    background: white;
+    float: left;
+    border: 0.1em solid #eee; 
+    border-top: 0.1em solid #ccc;
+    border-left: 0.1em solid #ccc;
+    border-radius: 0.2em;
+    padding: 0;
+    width: calc(100% - 0.2em);
+}
+input[type="text"] {
+    border: 0.1em solid #888; 
+    border-top: 0.1em solid #555;
+    border-left: 0.1em solid #555;
+    border-radius: 0.2em; 
+    background-color: white; 
+    height: 1.3em;
+    margin: 0;
+    padding: 0.1em 0.1em 0.2em 0.2em;
+}
+input[type="text"]:focus {
+    border: 0.1em solid #c96;
+    border-top: 0.1em solid #a60;
+    border-left: 0.1em solid #a60;
+    background-color: #fffff3; 
+}
+input[type="text"]:hover {
+    border: 0.1em solid #eb8;
+    border-top: 0.1em solid #c82;
+    border-left: 0.1em solid #c82;
+}
+input[type="password"] {
+    border: 0.1em solid #888; 
+    border-top: 0.1em solid #555;
+    border-left: 0.1em solid #555;
+    border-radius: 0.2em; 
+    background-color: white; 
+    height: 1.3em;
+    margin: 0;
+    padding: 0 0.1em 0.2em 0.2em;
+}
+input[type="password"]:focus {
+    border: 0.1em solid #c96;
+    border-top: 0.1em solid #a60;
+    border-left: 0.1em solid #a60;
+    background-color: #fffff3; 
+}
+input[type="password"]:hover {
+    border: 0.1em solid #eb8;
+    border-top: 0.1em solid #c82;
+    border-left: 0.1em solid #c82;
+}
+label {
+	padding-left: 0.25em;
+}
+select {
+    border: 0.1em solid #888; 
+    border-top: 0.1em solid #555;
+    border-left: 0.1em solid #555;
+    border-radius: 0.2em; 
+    background: white; 
+    height: 1.7em;
+    margin: 0;
+    background: white;
+}
+select:focus {
+    border: 0.1em solid #c96;
+    border-top: 0.1em solid #a60;
+    border-left: 0.1em solid #a60;
+    background-color: #fffff3; 
+}
+select:hover {
+    border: 0.1em solid #eb8;
+    border-top: 0.1em solid #c82;
+    border-left: 0.1em solid #c82;
+}
+textarea {
+    border: 0.1em solid #888; 
+    border-top: 0.1em solid #555;
+    border-left: 0.1em solid #555;
+    border-radius: 0.2em; 
+    background: white; 
+    margin: 0;
+    padding: 0 0.1em 0.2em 0.2em;
+}
+textarea:focus {
+    border: 0.1em solid #c96;
+    border-top: 0.1em solid #a60;
+    border-left: 0.1em solid #a60;
+    background-color: #fffff3; 
+}
+textarea:hover {
+    border: 0.1em solid #eb8;
+    border-top: 0.1em solid #c82;
+    border-left: 0.1em solid #c82;
+}
+.CodeMirror {
+	border: 0.1em solid #888; 
+    border-top: 0.1em solid #555;
+    border-left: 0.1em solid #555;
+    border-radius: 0.2em; 
+    background: white; 
+    margin: 0;
+    padding: 0 0.1em 0.2em 0.2em;
+    font-family: roboto;
+    font-size: 1em;
+}
+.CodeMirror:focus {
+    border: 0.1em solid #c96;
+    border-top: 0.1em solid #a60;
+    border-left: 0.1em solid #a60;
+    background-color: #fffff3; 
+}
+.CodeMirror:hover {
+    border: 0.1em solid #eb8;
+    border-top: 0.1em solid #c82;
+    border-left: 0.1em solid #c82;
+}
+.jedt {
+    float: left;
+    margin: 0 0 0.5em 0;
+    width: 100%;
+}
+.jedticon {
+	margin: 0.5em 0.5em 0 -1.5em;
+	cursor: pointer;
+}
+.jwrpb { /* Wrap for buttons */
+    background-color: #eee;
+    border-radius: 0.5em;
+    margin-top: -0.4em;
+    padding: 0.4em 0 0.4em 0.3em;
+}
+.jwrpi { /* Wrap for inputs */
+    background-color: #eee;
+    border: 0.1em solid silver;
+    border-left: none;
+    border-right: none;
+    margin: 0 0 0.5em 0;
+    padding: 0.3em 0 0.1em 0;
+}
+.jlbl { 
+    color: black;
+    height: 1.2em;
+    padding: 0;
+    margin: -0.1em 0 0 0; 
+}
+.jrequired { color: darkred; }
+.jreadonly { color: #449; }
+.mobi-scroll {
+	max-height: calc(100% - 2.9em); 
+	overflow-y: auto;
+	position: relative;
+	top: 0; 
+}
+.mobi-scroll.top {
+	border-top: 0.3em solid transparent;
+	border-bottom: 0.3em dotted rgba(72,128,72,0.9);
+}
+.mobi-scroll.middle {
+	border-top: 0.3em dotted rgba(72,128,72,0.9);
+	border-bottom: 0.3em dotted rgba(72,128,72,0.9);
+}
+.mobi-scroll.bottom {
+	border-top: 0.3em dotted rgba(72,128,72,0.9);
+	border-bottom: 0.3em solid transparent;
+}

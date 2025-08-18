@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+:root {
+	--content-background: #fff0;
+	
+	--button-border-outer-left-top: #777;
+	--button-border-outer-right-bottom: #444;
+	--button-border-inner-left-top: #ddd;
+	--button-border-inner-right-bottom: #999;
+	--button-background: linear-gradient(#fff 0%, #eee 33%, #eee 80%, #ddd 100%);
+	--button-text: #000b;
+	
+	--footer-background: #e6e6e680;
+	
+	--grid-border: silver;
+	--grid-background: #e6e6e680;
+	--grid-header-background: linear-gradient(white 0%, whitesmoke 25%, whitesmoke 75%, silver 100%);
+	--grid-header-border: silver;
+	--grid-header-color: #135;
+	--grid-body-border: silver;
+	--grid-table-border: gray;
+	--grid-table-border-top: silver;
+	--grid-row-background: #fff8;
+	--grid-cell-border: gainsboro;
+	--grid-footer-background: linear-gradient(white 0%, whitesmoke 25%, whitesmoke 75%, silver 100%);
+	--grid-footer-border: #ddd;
+	--grid-footer-text: #135;
+	
+	--header-background: #e6e6e680;
+	--header-border-top: #008e00b2;
+	
+	--logo-color: black;
+	--logo-filter: none; /* Technically not a color, but it is needed. */
+	--logo-shadow: darkgray;
+	
+	--menu-background: linear-gradient(#008010b2, #006008b2);
+	--menu-border-bottom: #008e00b2;
+	--menu-border-top: #008e00b2;
+	--menu-shadow: silver;
+	--menu-text: black;
+	
+	--tab-set-background: linear-gradient(transparent 0%, transparent 60%, rgba(0, 0, 0, 0.1) 90%, rgba(0, 0, 0, 0.15) 100%);
+	--tab-set-border: #444;
+	--tab-set-text: black;
+	--tab-background: linear-gradient(#fafafa 0%, #eaeaea 33%, #eaeaea 100%);
+	--tab-border-outer-top-left: #777;
+	--tab-border-outer-bottom: #ccc;
+	--tab-border-outer-right: #444;
+	--tab-border-inner-top-left: #ddd;
+	--tab-border-inner-right: #999;
+	--tab-text: dimgray;
+}

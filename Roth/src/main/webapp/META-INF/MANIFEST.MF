@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: 
+Specification-Title: Roth
+Specification-Version: 2025 (7.0)
+Implementation-Version: 2025.1 (7.0.1)
+Implementation-Copyright: James M. Payne

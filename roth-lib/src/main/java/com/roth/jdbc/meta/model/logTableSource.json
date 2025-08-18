@@ -1,0 +1,81 @@
+{
+    "schema": "{SCHEMA}",
+    "name": "{NAME}_log",
+    "columns": [
+        {
+            "name": "{NAME}_log_id",
+            "dataType": "BIGINT",
+            "size": 19,
+            "required": true,
+            "autoIncrement": true
+        },
+        {
+            "name": "{NAME}_id",
+            "dataType": "BIGINT",
+            "size": 19,
+            "required": true
+        },
+        {
+            "name": "field_name",
+            "dataType": "VARCHAR",
+            "size": 60,
+            "required": true
+        },
+        {
+            "name": "old_value",
+            "dataType": "VARCHAR",
+            "size": 2048
+        },
+        {
+            "name": "new_value",
+            "dataType": "VARCHAR",
+            "size": 2048
+        },
+        {
+            "name": "changed_by",
+            "dataType": "VARCHAR",
+            "size": 50,
+            "required": true
+        },
+        {
+            "name": "changed_dts",
+            "dataType": "DATETIME",
+            "required": true
+        }
+    ],
+    "primaryKey": {
+        "name": "{NAME}_pk",
+        "columnNames": [ "{NAME}_log_id" ]
+    },
+    "foreignKeys": [
+        {
+            "name": "{NAME}_log_fk",
+            "columnNames": [ "{NAME}_id" ],
+            "refTableName": "{NAME}",
+            "refColumnNames": [ "{NAME}_id" ],
+            "cascadeDelete": true
+        }
+    ],
+    "indexes": [
+        {
+            "name": "{NAME}_log1_idx",
+            "columnNames": [ "{NAME}_id" ]
+        },
+        {
+            "name": "{NAME}_log2_idx",
+            "columnNames": [ "changed_dts" ]
+        },
+        {
+            "name": "{NAME}_log3_idx",
+            "columnNames": [ "{NAME}_id", "changed_dts" ]
+        },
+        {
+            "name": "{NAME}_log4_idx",
+            "columnNames": [ "{NAME}_id", "field_name" ]
+        },
+        {
+            "name": "{NAME}_log5_idx",
+            "columnNames": [ "{NAME}_id", "field_name", "changed_dts" ]
+        }
+    ]
+}

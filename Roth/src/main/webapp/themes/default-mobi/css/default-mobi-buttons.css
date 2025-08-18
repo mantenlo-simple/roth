@@ -1,0 +1,145 @@
+/* Button */
+.jbtn {
+    float: left;
+    border: 1px solid #777;
+    border-right: 0.075em solid #444;
+    border-bottom: 0.075em solid #444;
+    border-radius: 0.4em;
+    margin-right: 0.6em;
+    cursor: pointer;
+    text-decoration: none;
+}
+.jbtn > div {
+    background: linear-gradient(#fff 0%, #eee 33%, #eee 80%, #ddd 100%);
+    border: 0.075em solid #ddd;
+    border-right: 0.075em solid #999;
+    border-bottom: 0.075em solid #999;
+    border-radius: 0.3em;
+    padding: 0.1em 0.4em 0.1em 0.4em;
+    font-size: 1.2em;
+    color: black;
+    white-space: nowrap;
+}
+.jbtn .jimg {
+    margin: 0.2em 0 0 0;
+}
+.jbtn:hover > div {
+    background: linear-gradient(#fff, #ffe);
+}
+.jbtn:active > div {
+    background: linear-gradient(#fff, #ddc);
+}
+
+.jbtn.disabled {
+    border: 0.075em solid #eee;
+    border-right: 0.075em solid #bbb;
+    border-bottom: 0.075em solid #bbb;
+    cursor: auto;
+}
+.jbtn.disabled > div {
+    background: linear-gradient(#fff 0%, #eee 33%, #eee 80%, #ddd 100%);
+    border: 0.075em solid #ccc;
+    border-right: 0.075em solid #ddd;
+    border-bottom: 0.075em solid #ddd;
+    color: silver;
+}
+.jbtn.disabled:hover > div {
+    background: linear-gradient(#fff 0%, #eee 33%, #eee 80%, #ddd 100%);
+}
+.jbtn.disabled:active > div {
+    background: linear-gradient(#fff 0%, #eee 33%, #eee 80%, #ddd 100%);
+}
+
+.jbtn svg { color: rgba(0,0,0,0.75); }
+
+/* Tab Sets */
+.jtab {
+    background: linear-gradient(transparent 0%, transparent 60%, rgba(0, 0, 0, 0.1) 90%, rgba(0, 0, 0, 0.15) 100%);
+    border-bottom: 0.077em solid #444;
+    height: 1.6em;
+    padding: 0;
+    margin: 0;
+    font-family: roboto; /*Trebuchet MS;*/
+    font-size: 1.2em;
+    color: black;
+}
+.jtab ul { 
+    list-style: none; 
+    padding: 0 0 0 0.5em;
+    margin: 0px; 
+    display: block;
+    height: 1.8em;
+}
+.jtab li {
+    border: 0.077em solid #777;
+    border-right: 0.077em solid #444;
+    border-bottom: 0.077em solid #ccc;
+    border-radius: 0.5em 0.5em 0 0;
+    background: linear-gradient(#fafafa 0%, #eaeaea 33%, #eaeaea 100%);
+    height: 1.4em;
+    padding: 0;
+
+    display: block;
+    float: left;
+    margin: 0 0.3em 0 0; 
+    color: dimgray;
+    cursor: pointer;
+}
+.jtab li.left {}
+.jtab div {
+    margin: 0;
+    padding: 0.077em 0.5em;
+    border: 0.077em solid #ddd;
+    border-right: 0.075em solid #999;
+    border-bottom: none;
+    border-radius: 0.4em 0.4em 0 0;
+    height: 1.2em;
+    color: silver;
+    text-align: center;
+}
+li.left div {}
+.jtab div.right {}
+.jtab li:hover { 
+    background: linear-gradient(#fed 0%, whitesmoke 33%, whitesmoke 100%);
+    color: #430;
+}
+li:hover div {}
+li:hover div.right {}
+.jtab li:active {
+    color: black;
+}
+li:active div {}
+li:active div.right {}
+.jtab li.selected { 
+    color: black;
+}
+li.selected {
+    margin-top: -0.2em;
+    height: 1.8em;
+    border-bottom: none;
+    background: linear-gradient(#fff 0%, whitesmoke 33%, whitesmoke 100%);
+}
+li.selected div { 
+    padding-top: 0.2em;
+    height: 1.4em;
+}
+li.selected div.right {}
+.jtab span { 
+    margin-top: -1.5em;     
+    clear: both;
+    display: block;
+    font-size: 0.7em;
+    font-weight: bold;
+    color: dimgray;
+}
+.jtab li.selected span { color: black; }
+.jtab .jimg {
+    margin-top: 0.2em;
+}
+.jtab li svg { margin-left: 0.3em; }
+/* .jtab li.selected svg { color: rgba(0,0,0,0.75); } */
+.jpage {
+    border: 0.077em solid silver; 
+    border-top: none;
+    padding: 0.8em;
+}

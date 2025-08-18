@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+/*if Mobile {*/
+/* This is a mobile browser. */
+/*}*/
+/*if !Mobile {*/
+/* This is not a mobile browser. */
+/*}*/
+
+
+/*if Firefox,Chrome {*/
+/* This is Firefox or Chrome. */
+/*}*/
+
+
+/*if Firefox {*/
+/* This is Firefox. */
+/*}*/
+/*if !Firefox {*/
+/* This is not Firefox. */
+/*}*/
+/*if Firefox lt 120 {*/
+/* This is Firefox less than 120. */
+/*}*/
+/*if Firefox lt 130 {*/
+/* This is Firefox less than 130. */
+/*}*/
+/*if Firefox gt 120 {*/
+/* This is Firefox greater than 120. */
+/*}*/
+/*if Firefox gt 130 {*/
+/* This is Firefox greater than 130. */
+/*}*/
+/*if !Firefox lt 120 {*/
+/* This is not Firefox less than 120. */
+/*}*/
+/*if !Firefox lt 130 {*/
+/* This is not Firefox less than 130. */
+/*}*/
+/*if !Firefox gt 120 {*/
+/* This is not Firefox greater than 120. */
+/*}*/
+/*if not Firefox gt 130 {*/
+/* This is not Firefox greater than 130. */
+/*}*/
+
+
+/*if Chrome {*/
+/* This is Chrome. */
+/*}*/
+/*if !Chrome {*/
+/* This is not Chrome. */
+/*}*/
+/*if Chrome lt 120 {*/
+/* This is Chrome less than 120. */
+/*}*/
+/*if Chrome lt 130 {*/
+/* This is Chrome less than 130. */
+/*}*/
+/*if Chrome gt 120 {*/
+/* This is Chrome greater than 120. */
+/*}*/
+/*if Chrome gt 130 {*/
+/* This is Chrome greater than 130. */
+/*}*/
+
+/*if Edge {*/
+/* This is Edge. */
+/*}*/
+/*if !Edge {*/
+/* This is not Edge. */
+/*}*/
+/*if Edge lt 120 {*/
+/* This is Edge less than 120. */
+/*}*/
+/*if Edge lt 130 {*/
+/* This is Edge less than 130. */
+/*}*/
+/*if Edge gt 120 {*/
+/* This is Edge greater than 120. */
+/*}*/
+/*if Edge gt 130 {*/
+/* This is Edge greater than 130. */
+/*}*/

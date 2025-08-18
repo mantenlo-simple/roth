@@ -1,0 +1,48 @@
+{
+	"roles": [
+		{ 
+			"roleName": "Developer",
+			"description": "Developer",
+			"updatedBy": "admin@default",
+			"updatedDts": "2010-10-12T00:00:00"
+		}
+	],
+	"portlets": [
+		{
+			"portletName": "Developer",
+			"portletUri": "/RothDeveloper/Developer",
+			"description": "Database Tool",
+			"updatedBy": "admin@default",
+			"updatedDts": "2010-10-12T00:00:00",
+			"roles": [ "SystemAdmin", "Developer" ]
+		}
+	],
+	"books": [
+		{
+			"bookName": "Roth Home",
+			"bookTitle": "Roth Home",
+			"description": "Roth Home Page",
+			"updatedBy": "admin@default",
+			"updatedDts": "2010-10-12T00:00:00"
+		},
+		{
+			"bookName": "Roth Admin",
+			"bookTitle": "Admin",
+			"description": "Roth Admin Menu",
+			"parentName": "Roth Home",
+			"sequence": 1,
+			"updatedBy": "admin@default",
+			"updatedDts": "2010-10-12T00:00:00"
+		}
+	],
+	"pages": [
+		{
+			"bookName": "Roth Admin",
+			"portletName": "Developer",
+			"pageTitle": "Database Tool",
+			"sequence": 2,
+			"updatedBy": "admin@default",
+			"updatedDts": "2010-10-12T00:00:00"
+		}
+	]
+}

@@ -1,0 +1,46 @@
+themeId=1
+themeName=Default
+customCssUri=/Roth/themes/default/css/default.css
+customJsUri=
+homeUri=
+homeUriViewType=I
+updBy=jpayne@default
+updDts=2019-01-12 22:46:31
+{BREAK}
+James M. Payne &nbsp; | &nbsp; <version/> &nbsp; | &nbsp; <a href="#">Return to the Top</a>
+{BREAK}
+		<div class="portlet">
+			<div class="links">
+				<links/>
+			</div>
+			<div class="header">
+				<div class="logo">
+					Roth
+				</div>
+				<div style="float: right;">
+					<div class="desktoptitle">
+						<desktoptitle/>
+					</div>
+					<div class="rbreak"></div>
+					<div class="portlettitle">
+						<portlettitle/>
+					</div>
+				</div>
+				<div class="rbreak"></div>
+			</div>
+			<div class="menu">
+				<menu/>
+				<usermenu/>
+			</div>
+			<div class="rbreak"></div>
+			<div class="content">
+<portletcontent/>			
+            </div>
+			<div class="footer">
+				<copyright/>
+			</div>
+		</div>
+{BREAK}
+
+{BREAK}
+

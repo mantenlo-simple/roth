@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.roth</groupId>
+	<artifactId>roth-deployment-package</artifactId>
+	<version>7.0.1</version>
+	<packaging>pom</packaging>
+	<name>roth-deployment-package</name>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Don't use "maven.compiler.release" because we need to add the exports in the compiler args. -->
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+	</properties>
+	
+	<modules>
+		<module>../roth-lib</module>
+		<module>../Roth</module>
+		<module>../RothDeveloper</module>
+	</modules>
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+				 	<artifactId>maven-compiler-plugin</artifactId>
+				 	<version>3.14.0</version>
+				 	<configuration>
+	                    <compilerArgs>
+	                    	<arg>--add-exports</arg><arg>java.management/javax.management=ALL-UNNAMED</arg>
+	                        <arg>--add-exports</arg><arg>java.management/com.sun.jmx.interceptor=ALL-UNNAMED</arg>
+	                        <arg>--add-exports</arg><arg>java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED</arg>
+	                    </compilerArgs>
+	                </configuration>
+				</plugin>
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.4.0</version>
+				</plugin>
+				<!-- see
+				http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.3.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>3.3.0</version>
+					<configuration>
+		                <trimStackTrace>false</trimStackTrace>
+		            </configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+		
+	<dependencyManagement>
+		<dependencies>                                                                                                                                                       
+			<dependency>  <groupId>junit</groupId>                                     <artifactId>junit</artifactId>                          <version>4.13.2</version>      <scope>test</scope></dependency>
+			<dependency>  <groupId>org.junit.jupiter</groupId>                         <artifactId>junit-jupiter-engine</artifactId>           <version>5.13.4</version>      <scope>test</scope>  </dependency>
+			
+			<dependency>  <groupId>org.bouncycastle</groupId>                          <artifactId>bcjmail-jdk18on</artifactId>                <version>1.81</version>        </dependency>
+			<dependency>  <groupId>org.bouncycastle</groupId>                          <artifactId>bcpkix-jdk18on</artifactId>                 <version>1.81</version>        </dependency>
+			<dependency>  <groupId>org.bouncycastle</groupId>                          <artifactId>bcprov-jdk18on</artifactId>                 <version>1.81</version>        </dependency>
+			<dependency>  <groupId>ch.qos.logback</groupId>                            <artifactId>logback-core</artifactId>                   <version>1.5.18</version>      </dependency>
+			<dependency>  <groupId>com.google.javascript</groupId>                     <artifactId>closure-compiler</artifactId>               <version>v20250706</version>   </dependency>
+			<dependency>  <groupId>commons-codec</groupId>                             <artifactId>commons-codec</artifactId>                  <version>1.19.0</version>      </dependency>
+			<dependency>  <groupId>org.apache.commons</groupId>                        <artifactId>commons-collections4</artifactId>           <version>4.5.0</version>       </dependency>
+			<dependency>  <groupId>commons-io</groupId>                                <artifactId>commons-io</artifactId>                     <version>2.20.0</version>      </dependency>
+			<dependency>  <groupId>org.apache.commons</groupId>                        <artifactId>commons-lang3</artifactId>                  <version>3.18.0</version>      </dependency>
+			<dependency>  <groupId>commons-logging</groupId>                           <artifactId>commons-logging</artifactId>                <version>1.3.5</version>       </dependency>
+			<dependency>  <groupId>commons-net</groupId>                               <artifactId>commons-net</artifactId>                    <version>3.12.0</version>      </dependency>
+			<dependency>  <groupId>org.apache.commons</groupId>                        <artifactId>commons-text</artifactId>                   <version>1.14.0</version>      </dependency>
+			<dependency>  <groupId>org.apache.pdfbox</groupId>                         <artifactId>fontbox</artifactId>                        <version>3.0.5</version>       </dependency>
+			<dependency>  <groupId>com.google.guava</groupId>                          <artifactId>guava</artifactId>                          <version>33.4.8-jre</version>  </dependency>
+			<dependency>  <groupId>com.lowagie</groupId>                               <artifactId>itext</artifactId>                          <version>4.2.2</version>       </dependency> <!-- Confirm this one. -->
+			<dependency>  <groupId>fr.opensagres.xdocreport</groupId>           <artifactId>fr.opensagres.poi.xwpf.converter.pdf</artifactId>  <version>2.1.0</version>       </dependency>
+			<dependency>  <groupId>fr.opensagres.xdocreport</groupId>           <artifactId>fr.opensagres.poi.xwpf.converter.core</artifactId> <version>2.1.0</version>       </dependency>
+			<dependency>  <groupId>com.fasterxml.jackson.core</groupId>                <artifactId>jackson-annotations</artifactId>            <version>2.19.2</version>      </dependency>		
+			<dependency>  <groupId>com.github.jai-imageio</groupId>                    <artifactId>jai-imageio-core</artifactId>               <version>1.4.0</version>       </dependency>
+			<dependency>  <groupId>com.github.jai-imageio</groupId>                    <artifactId>jai-imageio-jpeg2000</artifactId>           <version>1.4.0</version>       </dependency>
+			<dependency>  <groupId>jakarta.activation</groupId>                        <artifactId>jakarta.activation-api</artifactId>         <version>2.1.3</version>       </dependency>
+			<dependency>  <groupId>org.eclipse.parsson</groupId>                       <artifactId>jakarta.json</artifactId>                   <version>1.1.7</version>       </dependency>
+			<dependency>  <groupId>org.glassfish</groupId>                             <artifactId>jakarta.json</artifactId>                   <version>2.0.1</version>       </dependency>
+			<dependency>  <groupId>jakarta.json</groupId>                              <artifactId>jakarta.json-api</artifactId>               <version>2.1.3</version>       </dependency>
+			<dependency>  <groupId>jakarta.json.bind</groupId>                         <artifactId>jakarta.json.bind-api</artifactId>          <version>3.0.1</version>       </dependency>
+			<dependency>  <groupId>jakarta.mail</groupId>                              <artifactId>jakarta.mail-api</artifactId>               <version>2.1.3</version>       </dependency>
+			<dependency>  <groupId>jakarta.servlet.jsp.jstl</groupId>                  <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>   <version>3.0.2</version>       </dependency>
+			<dependency>  <groupId>org.glassfish.web</groupId>                         <artifactId>jakarta.servlet.jsp.jstl</artifactId>       <version>3.0.1</version>       </dependency>
+			<dependency>  <groupId>jakarta.websocket</groupId>                         <artifactId>jakarta.websocket-api</artifactId>          <version>2.2.0</version>       </dependency>
+			<dependency>  <groupId>jakarta.websocket</groupId>                         <artifactId>jakarta.websocket-client-api</artifactId>   <version>2.2.0</version>       </dependency>
+			<dependency>  <groupId>io.bit3</groupId>                                   <artifactId>jsass</artifactId>                          <version>5.11.1</version>      </dependency>
+			<dependency>  <groupId>org.jsoup</groupId>                                 <artifactId>jsoup</artifactId>                          <version>1.21.1</version>      </dependency>
+			<dependency>  <groupId>org.sharegov</groupId>                              <artifactId>mjson</artifactId>                          <version>1.4.2</version>       </dependency>
+			<dependency>  <groupId>com.mysql</groupId>                                 <artifactId>mysql-connector-j</artifactId>              <version>9.4.0</version>       </dependency>
+			<dependency>  <groupId>com.oracle.database.jdbc</groupId>                  <artifactId>ojdbc11</artifactId>                        <version>23.9.0.25.07</version> </dependency>
+			<dependency>  <groupId>com.googlecode.owasp-java-html-sanitizer</groupId>  <artifactId>owasp-java-html-sanitizer</artifactId>      <version>20240325.1</version>  </dependency>
+			<dependency>  <groupId>org.apache.pdfbox</groupId>                         <artifactId>pdfbox</artifactId>                         <version>3.0.5</version>       </dependency>
+			<dependency>  <groupId>org.apache.pdfbox</groupId>                         <artifactId>pdfbox-tools</artifactId>                   <version>3.0.5</version>       </dependency>
+			<dependency>  <groupId>org.apache.poi</groupId>                            <artifactId>poi</artifactId>                            <version>5.4.1</version>       </dependency>
+			<dependency>  <groupId>org.apache.poi</groupId>                            <artifactId>poi-ooxml</artifactId>                      <version>5.4.1</version>       </dependency>
+			<dependency>  <groupId>org.apache.poi</groupId>                            <artifactId>poi-ooxml-full</artifactId>                 <version>5.4.1</version>       </dependency>
+			<dependency>  <groupId>org.apache.poi</groupId>                            <artifactId>poi-ooxml-lite</artifactId>                 <version>5.4.1</version>       </dependency>
+			<dependency>  <groupId>org.apache.poi</groupId>                            <artifactId>poi-ooxml-schemas</artifactId>              <version>4.1.2</version>       </dependency>
+			<dependency>  <groupId>org.apache.pdfbox</groupId>                         <artifactId>preflight</artifactId>                      <version>3.0.5</version>       </dependency>
+			<dependency>  <groupId>org.slf4j</groupId>                                 <artifactId>slf4j-api</artifactId>                      <version>2.0.17</version>      </dependency>
+			<dependency>  <groupId>org.apache.tika</groupId>                           <artifactId>tika-core</artifactId>                      <version>3.2.2</version>       </dependency>
+			<dependency>  <groupId>org.apache.tika</groupId>                           <artifactId>tika-parsers-standard-package</artifactId>  <version>3.2.2</version>       </dependency>
+			<dependency>  <groupId>org.apache.tomcat</groupId>                         <artifactId>tomcat-catalina</artifactId>                <version>11.0.10</version>     </dependency>
+			<dependency>  <groupId>org.apache.tomcat</groupId>                         <artifactId>tomcat-catalina-ha</artifactId>             <version>11.0.10</version>     </dependency>
+			<dependency>  <groupId>org.apache.tomcat</groupId>                         <artifactId>tomcat-tribes</artifactId>                  <version>11.0.10</version>     </dependency>
+			<dependency>  <groupId>org.apache.xmlbeans</groupId>                       <artifactId>xmlbeans</artifactId>                       <version>5.3.0</version>       </dependency>
+			<dependency>  <groupId>org.apache.pdfbox</groupId>                         <artifactId>xmpbox</artifactId>                         <version>3.0.5</version>       </dependency>
+			<dependency>  <groupId>org.eclipse</groupId>                               <artifactId>yasson</artifactId>                         <version>3.0.4</version>       </dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

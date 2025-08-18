@@ -1,0 +1,39 @@
+themeId=2
+themeName=Default Mobi
+customCssUri=/Roth/themes/default-mobi/css/default-mobi.css|/Roth/themes/default/css/default_combined.css
+customJsUri=
+homeUri=
+homeUriViewType=I
+createBy=jpayne@default
+createdDts=2020-12-25 16:18:26
+updatedBy=jpayne@default
+updatedDts=2020-12-25 16:18:26
+{BREAK}
+James M. Payne
+{BREAK}
+<div class="menu">
+    <menu/>
+  	<div class="head">
+      <div class="logo">
+        Roth<span style="font-family: Roboto; font-size: 0.4em; margin-top: 0.6em;"> 2025<span class="subversion">.1</span></span>
+	  </div>
+      <div style="float: right; padding-right: 8px; position: relative;">
+        <span style="font-size: 0.9rem; float: left;"><desktoptitle/></span>
+        <div class="rbreak"></div>
+        <span style="font-size: 0.6rem; position: absolute; top: 18px; right: 8px; white-space: nowrap;"><portlettitle/></span>
+      </div>
+    </div>
+    <usermenu/>
+    <div class="rbreak"></div>
+</div>
+<div class="jbreak"></div>
+<div class="main">
+    <div class="main_content"><portletcontent/></div>
+</div>
+<div class="footer">
+    <copyright/> | <links/>
+</div>
+{BREAK}
+
+{BREAK}
+

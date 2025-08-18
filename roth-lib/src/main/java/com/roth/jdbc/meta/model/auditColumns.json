@@ -1,0 +1,24 @@
+ [
+    {
+        "name": "created_by",
+        "dataType": "VARCHAR",
+        "size": 50,
+        "required": true
+    },
+    {
+        "name": "created_dts",
+        "dataType": "DATETIME",
+        "required": true
+    },
+    {
+        "name": "updated_by",
+        "dataType": "VARCHAR",
+        "size": 50,
+        "required": true
+    },
+    {
+        "name": "updated_dts",
+        "dataType": "DATETIME",
+        "required": true
+    }
+]

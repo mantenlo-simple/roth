@@ -1,0 +1,211 @@
+/*
+Copyright 2010 James M. Payne
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+/*
+#nopad {
+    margin: 0px;
+    padding: 0px;
+}
+*/
+.menu {
+	color: #777;
+	font-size: 1.5em;
+	float: left;
+	margin: 0.4em 0.6em 0 0.2em;
+}
+.usermenu {
+	color: #777;
+	font-size: 1.5em;
+	float: right;
+	margin: 0.2em -0.2em 0 0.4em;
+}
+.menu > div {
+	/* float: left; */
+	margin: 0;
+	/*padding: 0.2em 0.5em 0.2em 0.3em;*/
+	cursor: pointer;
+    z-index: 1;
+}
+.mdropparent:after {
+	line-height: 90%;
+	font-size: 1.3em;
+	vertical-align: top;
+	content: "\025be";
+}
+.dropmenu .mdropparent:after {
+    content: "\025B8";
+}
+.dropmenu {
+	display: none;
+	position: absolute;
+	border-top: 1px solid silver;
+	border-right: 1px solid gray;
+	border-bottom: 1px solid gray;
+	border-left: 1px solid silver;
+	background: whitesmoke;
+	margin: 0.2em 0 0 0;
+	padding: 0px;
+	color: black;
+	box-shadow: 2px 2px 8px #555;
+	z-index: 1;
+}
+.mdropparent[float="right"] .dropmenu {
+    right: 0;
+}
+.dropmenu .dropmenu {
+	margin: -0.2em 0 0 1em;
+}
+.dropmenu > div {
+	clear: both;
+	margin: 0px;
+	padding: 2px 5px;
+}
+.menudown {
+	background: #444;
+	color: white;
+}
+.menuover {
+	background: linear-gradient(rgba(128, 128, 128, 0.3) 0%, rgba(128, 128, 128, 0.3) 10%, rgba(64, 64, 64, 0.3) 40%, rgba(64, 64, 64, 0.3) 100%); 
+	color: #9BF;
+}
+.dropmenu .menuover { 
+    background: linear-gradient(whitesmoke 0%, silver 100%); 
+	color: #026; 
+}
+
+
+.jmenu {
+	float: left;
+	color: black;
+}
+.jmenumain {}
+.jmenudrop {
+	display: none;
+	position: absolute;
+	border-top: 0.1em solid silver;
+    border-right: 0.1em solid gray;
+    border-bottom: 0.1em solid gray;
+    border-left: 0.1em solid silver;
+    background: whitesmoke;
+    margin: 0.2em 0 0 0;
+    padding: 0;
+    box-shadow: 0.2em 0.2em 0.5em #555;
+    z-index: 1;
+}
+.jmenudrop .jmenudrop {
+	left: calc(100% - 0.5em);
+	top: -0.1em;
+}
+.jmenuitem {
+	margin: 0;
+    padding: 0.2em 0.5em 0.2em 0.3em;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+.jmenuitem:hover {
+	/*background: linear-gradient(rgba(196, 196, 196, 196) 0%, rgba(196, 196, 196, 0.3) 10%, rgba(128, 128, 128, 0.3) 40%, rgba(128, 128, 128, 0.3) 100%);*/
+	background: linear-gradient(rgba(255,255,255,0.4) 0%, rgba(240,240,240,0.4) 100%);  
+    /*color: #026;*/
+}
+.jmenumain>.jmenuitem:hover{color:white;}
+.jmenuitemover {
+    background: linear-gradient(rgba(128, 128, 128, 0.3) 0%, rgba(128, 128, 128, 0.3) 10%, rgba(64, 64, 64, 0.3) 40%, rgba(64, 64, 64, 0.3) 100%); 
+    color: #9BF;
+}
+.jmenu > .jmenuitem {
+	float: left;
+}
+.jmenu > div.jmenuitem:after {
+    line-height: 90%;
+    font-size: 1.3em;
+    vertical-align: top;
+    content: "\025be";
+}
+.jmenudrop > .jmenuitem {
+	float: none;
+	clear: both;
+	color: black;
+	display: block;
+}
+.jmenudrop > .jmenuitem:hover {
+	background: linear-gradient(rgba(196, 196, 196, 196) 0%, rgba(196, 196, 196, 0.3) 10%, rgba(128, 128, 128, 0.3) 40%, rgba(128, 128, 128, 0.3) 100%);
+}
+.jmenudrop > div.jmenuitem:after {
+    line-height: 90%;
+    font-size: 1.3em;
+    vertical-align: top;
+    content: "\025B8";
+}
+.jdrop > .jmenudrop {
+    display: block;
+}
+.jdrop > .jmainmenu {}
+
+.jusermenu {
+	color: black;
+	float: right;
+	text-decoration: none;
+	cursor: pointer;
+}
+.jusername {
+	position: relative;
+	padding: 0.2em 0.5em 0.2em 0.3em;
+}
+.jusername:hover {
+	background: linear-gradient(rgba(196, 196, 196, 196) 0%, rgba(196, 196, 196, 0.3) 10%, rgba(128, 128, 128, 0.3) 40%, rgba(128, 128, 128, 0.3) 100%);
+}
+/*
+.jusername:after {
+	line-height: 90%;
+    font-size: 1.3em;
+    vertical-align: top;
+    content: "\025be";
+}
+*/
+.juserdrop {
+	display: none;
+    position: absolute;
+    right: 0.2em;
+    white-space: nowrap;
+    border-top: 0.1em solid silver;
+    border-right: 0.1em solid gray;
+    border-bottom: 0.1em solid gray;
+    border-left: 0.1em solid silver;
+    background: whitesmoke;
+    margin: 0.2em 0 0 0;
+    padding: 0;
+    box-shadow: 0.2em 0.2em 0.5em #555;
+    z-index: 1;
+    color: black;
+}
+.jdrop .juserdrop {
+	display: block;
+}
+.juseritem {
+	display: block;
+	clear: both;
+	text-decoration: none;
+	padding: 0.2em 0.5em 0.2em 0.3em;
+}
+.juseritem:hover {
+	background: linear-gradient(whitesmoke 0%, silver 100%); 
+    color: #026;
+}
+.jmenusep {
+	height: 0;
+	border: 0.1em solid silver;
+	margin: 0.3em 0.2em;
+}

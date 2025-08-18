@@ -1,0 +1,47 @@
+<%--
+Copyright 2010 James M. Payne
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<%@taglib uri="jakarta.tags.core" prefix="c"%>
+<%@taglib uri="jakarta.tags.fmt" prefix="fmt"%>
+<%@taglib uri="roth" prefix="r"%>
+
+<r:form action="/Role/savePortlets" method="AJAX" onAjax="Roth.ajax.htmlCallback(request, 'roleportlets')" autoComplete="off" onSubmit="Roth.getDialog('wait').wait('Please wait while your changes are saved...');">
+    <r:dataGrid dataSource="requestScope.rolePortlets" height="250" containerId="roleportlets">
+        <r:row onClick="getChild(this, '0.0.0').click();"/>
+        <r:column caption="" dataSource="roleName" width="2.7em">
+            <c:set var="checkvalue">checkvalue="${param['roleName']}"</c:set>
+            <input type="checkbox" 
+                   name="requestScope.rolePortlets[${rowIndex}].roleName"
+                   value="${!empty requestScope.rolePortlets[rowIndex].roleName ? param['roleName'] : ''}"
+                   ${checkvalue}
+                   onclick="this.value = (this.checked) ? this.getAttribute('checkvalue') : ''" 
+                   ${!empty requestScope.rolePortlets[rowIndex].roleName ? 'checked' : ''}
+             />
+             <r:hidden dataSource="requestScope.rolePortlets[${rowIndex}].portletId"/>
+             <r:hidden dataSource="requestScope.rolePortlets[${rowIndex}].updatedBy"/>
+             <r:hidden dataSource="requestScope.rolePortlets[${rowIndex}].updatedDts"/>
+        </r:column>
+        <r:column caption="Portlet Name" dataSource="portletName" width="17.5em"/>
+        <r:column caption="Assigned By" dataSource="updatedBy" width="11em"/>
+        <r:column caption="Assigned On" dataSource="updatedDts" width="11em"/>
+
+	    <r:button type="save" formSubmit="true"/>
+	    <r:button type="close" onClick="Roth.getParentDialog(this).hide();"/>
+    </r:dataGrid>
+    <input type="hidden" name="roleName" id="roleName" value="${param['roleName']}"/>
+</r:form>
+<div class="jbreak"></div>

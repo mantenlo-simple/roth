@@ -1,0 +1,371 @@
+<!-- 
+Copyright 2010 James M. Payne
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ -->
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+  http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+
+    <tlib-version>2.0</tlib-version>
+    <short-name>Roth-Functions</short-name>
+    <uri>roth-functions</uri>
+    
+    <function>
+        <name>getDomainName</name>
+        <function-class>com.roth.tags.el.User</function-class>
+        <function-signature>
+            java.lang.String getDomainName(jakarta.servlet.jsp.PageContext)
+        </function-signature>
+    </function>
+    <function>
+        <name>getUserId</name>
+        <function-class>com.roth.tags.el.User</function-class>
+        <function-signature>
+            java.lang.String getUserId(jakarta.servlet.jsp.PageContext)
+        </function-signature>
+    </function>
+    <function>
+        <name>getUserName</name>
+        <function-class>com.roth.tags.el.User</function-class>
+        <function-signature>
+            java.lang.String getUserName(jakarta.servlet.jsp.PageContext)
+        </function-signature>
+    </function>
+    <function>
+        <name>getUserFullName</name>
+        <function-class>com.roth.tags.el.User</function-class>
+        <function-signature>
+            java.lang.String getUserFullName(jakarta.servlet.jsp.PageContext)
+        </function-signature>
+    </function>
+    <function>
+        <name>isUserInRole</name>
+        <function-class>com.roth.tags.el.User</function-class>
+        <function-signature>
+            boolean isUserInRole(jakarta.servlet.jsp.PageContext, java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+        <name>bitSet</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            boolean bitSet(int, int)
+        </function-signature>
+    </function>
+    <function>
+        <name>bitAnd</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            int bitAnd(int, int)
+        </function-signature>
+    </function>
+    <function>
+        <name>bitOr</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            int bitOr(int, int)
+        </function-signature>
+    </function>
+    <function>
+        <name>bitXor</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            int bitXor(int, int)
+        </function-signature>
+    </function>
+    <function>
+        <name>bitNot</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            int bitNot(int)
+        </function-signature>
+    </function>
+    <function>
+        <name>bitNand</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            int bitNand(int, int)
+        </function-signature>
+    </function>
+    <function>
+        <name>bitNor</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            int bitNor(int, int)
+        </function-signature>
+    </function>
+    <function>
+        <name>index2bit</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            int index2bit(int)
+        </function-signature>
+    </function>
+    <function>
+        <name>lesserOf</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            int lesserOf(int, int)
+        </function-signature>
+    </function>
+    <function>
+        <name>greaterOf</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            int greaterOf(int, int)
+        </function-signature>
+    </function>
+    <function>
+        <name>now</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.Object now(java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+        <name>date</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.Object date(java.lang.String, int, int, int, int, int, int)
+        </function-signature>
+    </function>
+    <function>
+        <name>dateAdd</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.Object dateAdd(java.lang.Object, java.lang.String, int)
+        </function-signature>
+    </function>
+    <function>
+        <name>truncDate</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.Object truncDate(java.lang.Object source)
+        </function-signature>
+    </function>
+    <function>
+        <name>formatDate</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.String formatDate(java.lang.Object, java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+    	<name>formatNumber</name>
+    	<function-class>com.roth.tags.el.Util</function-class>
+    	<function-signature>
+    		java.lang.String formatNumber(java.lang.Number, java.lang.String)
+    	</function-signature>
+    </function>
+    <function>
+        <name>nvl</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.Object nvl(java.lang.Object, java.lang.Object)
+        </function-signature>
+    </function>
+    <function>
+        <name>nnvl</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.Object nnvl(java.lang.Object, java.lang.Object)
+        </function-signature>
+    </function>
+    <!-- 
+    <function>
+        <name>formatLocalDate</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.String formatDate(java.time.LocalDate, java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+        <name>formatLocalDateTime</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.String formatDate(java.time.LocalDateTime, java.lang.String)
+        </function-signature>
+    </function>
+     -->
+    <function>
+        <name>encrypt</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.String encrypt(java.lang.String, long)
+        </function-signature>
+    </function>
+    <function>
+        <name>decrypt</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.String decrypt(java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+        <name>encodeURL</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.String encodeURL(jakarta.servlet.jsp.PageContext, java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+        <name>encodeRedirectURL</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.String encodeRedirectURL(jakarta.servlet.jsp.PageContext, java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+        <name>setResourcePath</name>
+        <function-class>com.roth.tags.el.Resource</function-class>
+        <function-signature>
+            void setResourcePath(jakarta.servlet.jsp.PageContext, java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+        <name>value</name>
+        <function-class>com.roth.tags.el.Resource</function-class>
+        <function-signature>
+            java.lang.String getString(jakarta.servlet.jsp.PageContext, java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+        <name>valuex</name>
+        <function-class>com.roth.tags.el.Resource</function-class>
+        <function-signature>
+            java.lang.String getString(jakarta.servlet.jsp.PageContext, java.lang.String, java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+        <name>intValue</name>
+        <function-class>com.roth.tags.el.Resource</function-class>
+        <function-signature>
+            java.lang.Integer getInteger(jakarta.servlet.jsp.PageContext, java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+        <name>intValuex</name>
+        <function-class>com.roth.tags.el.Resource</function-class>
+        <function-signature>
+            java.lang.Integer getInteger(jakarta.servlet.jsp.PageContext, java.lang.String, java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+        <name>in</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            boolean in(java.lang.Object, java.lang.Object[])
+        </function-signature>
+    </function>
+    <function>
+        <name>fieldOf</name>
+        <function-class>com.roth.tags.util.DataUtils</function-class>
+        <function-signature>
+            java.lang.Object fieldOf(java.lang.Object, java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+        <name>jspInstId</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.String jspInstId(jakarta.servlet.jsp.PageContext)
+        </function-signature>
+    </function>
+    <function>
+        <name>mobile</name>
+        <function-class>com.roth.tags.el.Browser</function-class>
+        <function-signature>
+            boolean mobile(jakarta.servlet.jsp.PageContext)
+        </function-signature>
+    </function>
+    <function>
+        <name>browserName</name>
+        <function-class>com.roth.tags.el.Browser</function-class>
+        <function-signature>
+            java.lang.String browserName(jakarta.servlet.jsp.PageContext)
+        </function-signature>
+    </function>
+    <function>
+        <name>browserVersion</name>
+        <function-class>com.roth.tags.el.Browser</function-class>
+        <function-signature>
+            java.lang.String browserVersion(jakarta.servlet.jsp.PageContext)
+        </function-signature>
+    </function>
+    <function>
+        <name>contextRoot</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.String contextRoot(jakarta.servlet.jsp.PageContext)
+        </function-signature>
+    </function>
+    <function>
+        <name>registerPath</name>
+        <function-class>com.roth.tags.el.Util</function-class>
+        <function-signature>
+            java.lang.String registerPath(java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+    	<name>toInteger</name>
+    	<function-class>com.roth.tags.el.Util</function-class>
+    	<function-signature>
+            java.lang.Integer toInteger(java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+    	<name>toLong</name>
+    	<function-class>com.roth.tags.el.Util</function-class>
+    	<function-signature>
+            java.lang.Long toLong(java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+    	<name>toFloat</name>
+    	<function-class>com.roth.tags.el.Util</function-class>
+    	<function-signature>
+            java.lang.Float toFloat(java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+    	<name>toDouble</name>
+    	<function-class>com.roth.tags.el.Util</function-class>
+    	<function-signature>
+            java.lang.Double toDouble(java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+    	<name>toString</name>
+    	<function-class>com.roth.tags.el.Util</function-class>
+    	<function-signature>
+            java.lang.String toString(java.lang.Object)
+        </function-signature>
+    </function>
+    <function>
+    	<name>clipLength</name>
+    	<function-class>com.roth.tags.el.Util</function-class>
+    	<function-signature>
+            java.lang.String clipLength(java.lang.String, int)
+        </function-signature>
+    </function>
+    <function>
+    	<name>prefix</name>
+    	<function-class>com.roth.tags.el.Util</function-class>
+    	<function-signature>
+    		java.lang.String prefix(java.lang.String, java.lang.String)
+    	</function-signature>
+    </function>
+</taglib>

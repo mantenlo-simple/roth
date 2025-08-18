@@ -1,0 +1,393 @@
+/*
+Copyright 2010 James M. Payne
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+/*
+#nopad {
+    margin: 0px;
+    padding: 0px;
+}
+*/
+
+/*
+.menu {
+	background: linear-gradient(rgba(0,128,16,0.7), rgba(0, 96, 8, 0.7));
+	box-shadow: 0 0 0.5em silver;
+	font-size: 1.1em;
+	height: 1.8em;
+	margin: 0;
+	padding: 0;
+	font-weight: 500;
+	white-space: nowrap;
+	cursor: default;
+	color: white; 
+	z-index: 1;
+	border-top: 0.1em solid rgba(0,142,0,0.8);
+	border-bottom: 0.1em solid rgba(0,142,0,0.8);
+}
+.menu > div {
+	margin: 0;
+	cursor: pointer;
+    z-index: 1;
+}
+.mdropparent:after {
+	line-height: 90%;
+	font-size: 1.3em;
+	vertical-align: top;
+	content: "\025be";
+}
+.dropmenu .mdropparent:after {
+    content: "\025B8";
+}
+.dropmenu {
+	display: none;
+	position: absolute;
+	border-top: 1px solid silver;
+	border-right: 1px solid gray;
+	border-bottom: 1px solid gray;
+	border-left: 1px solid silver;
+	background: whitesmoke;
+	margin: 0.2em 0 0 0;
+	padding: 0px;
+	color: black;
+	box-shadow: 2px 2px 8px #555;
+	z-index: 2;
+}
+.mdropparent[float="right"] .dropmenu {
+    right: 0;
+}
+.dropmenu .dropmenu {
+	margin: -0.2em 0 0 1em;
+}
+.dropmenu > div {
+	clear: both;
+	margin: 0px;
+	padding: 2px 5px;
+}
+.menudown {
+	background: #444;
+	color: white;
+}
+.menuover {
+	background: linear-gradient(rgba(128, 128, 128, 0.3) 0%, rgba(128, 128, 128, 0.3) 10%, rgba(64, 64, 64, 0.3) 40%, rgba(64, 64, 64, 0.3) 100%); 
+	color: #9BF;
+}
+.dropmenu .menuover { 
+    background: linear-gradient(whitesmoke 0%, silver 100%); 
+	color: #026; 
+}
+
+
+.jmenu {
+	float: left;
+	color: black;
+}
+.jmenumain {}
+.jmenudrop {
+	display: none;
+	position: absolute;
+	border-top: 0.1em solid silver;
+    border-right: 0.1em solid gray;
+    border-bottom: 0.1em solid gray;
+    border-left: 0.1em solid silver;
+    background: whitesmoke;
+    margin: 0.2em 0 0 0;
+    padding: 0;
+    box-shadow: 0.2em 0.2em 0.5em #555;
+    z-index: 2;
+}
+.jmenudrop .jmenudrop {
+	left: calc(100% - 0.5em);
+	top: -0.1em;
+}
+.jmenuitem {
+	margin: 0;
+    padding: 0.2em 0.5em 0.2em 0.3em;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+.jmenuitem:hover {
+	background: linear-gradient(rgba(255,255,255,0.4) 0%, rgba(240,240,240,0.4) 100%);  
+}
+.jmenumain>.jmenuitem:hover{color:white;}
+.jmenuitemover {
+    background: linear-gradient(rgba(128, 128, 128, 0.3) 0%, rgba(128, 128, 128, 0.3) 10%, rgba(64, 64, 64, 0.3) 40%, rgba(64, 64, 64, 0.3) 100%); 
+    color: #9BF;
+}
+.jmenu > .jmenuitem {
+	float: left;
+}
+.jmenu > div.jmenuitem:after {
+    line-height: 90%;
+    font-size: 1.3em;
+    vertical-align: top;
+    content: "\025be";
+}
+.jmenudrop > .jmenuitem {
+	float: none;
+	clear: both;
+	color: black;
+	display: block;
+}
+.jmenudrop > .jmenuitem:hover {
+	background: linear-gradient(rgba(196, 196, 196, 196) 0%, rgba(196, 196, 196, 0.3) 10%, rgba(128, 128, 128, 0.3) 40%, rgba(128, 128, 128, 0.3) 100%);
+}
+.jmenudrop > div.jmenuitem:after {
+    line-height: 90%;
+    font-size: 1.3em;
+    vertical-align: top;
+    content: "\025B8";
+}
+.jdrop > .jmenudrop {
+    display: block;
+}
+.jdrop > .jmainmenu {}
+
+.jusermenu {
+	color: black;
+	float: right;
+	text-decoration: none;
+	cursor: pointer;
+}
+.jusername {
+	position: relative;
+	padding: 0.2em 0.5em 0.2em 0.3em;
+}
+.jusername:hover {
+	background: linear-gradient(rgba(196, 196, 196, 196) 0%, rgba(196, 196, 196, 0.3) 10%, rgba(128, 128, 128, 0.3) 40%, rgba(128, 128, 128, 0.3) 100%);
+}
+.jusername:after {
+	line-height: 90%;
+    font-size: 1.3em;
+    vertical-align: top;
+    content: "\025be";
+}
+.juserdrop {
+	display: none;
+    position: absolute;
+    right: 0.2em;
+    white-space: nowrap;
+    border-top: 0.1em solid silver;
+    border-right: 0.1em solid gray;
+    border-bottom: 0.1em solid gray;
+    border-left: 0.1em solid silver;
+    background: whitesmoke;
+    margin: 0.2em 0 0 0;
+    padding: 0;
+    box-shadow: 0.2em 0.2em 0.5em #555;
+    z-index: 2;
+    color: black;
+}
+.jdrop .juserdrop {
+	display: block;
+}
+.juseritem {
+	display: block;
+	clear: both;
+	text-decoration: none;
+	padding: 0.2em 0.5em 0.2em 0.3em;
+}
+.juseritem:hover {
+	background: linear-gradient(whitesmoke 0%, silver 100%); 
+    color: #026;
+}
+.jmenusep {
+	height: 0;
+	border: 0.1em solid silver;
+	margin: 0.3em 0.2em;
+}
+
+*/
+
+/* MENU */
+			
+			.menu {
+				background: linear-gradient(rgba(0,128,16,0.7), rgba(0, 96, 8, 0.7));
+				border-top: 0.1em solid rgba(0,142,0,0.8);
+				border-bottom: 0.1em solid rgba(0,142,0,0.8);
+				box-shadow: 0 0 0.5em silver;
+			}
+			
+			.menu * {
+				position: relative;
+			}
+			
+			.roth-menu * {
+				display: inline-block;
+				position: relative;
+			}
+			.roth-menu {
+				/* width: 100%;
+				border: 1px solid silver;
+				background: linear-gradient(#fff 0%, #eee 3px, #eee calc(100% - 4px), #ddd 100%); */
+				display: inline-block;
+				color: black; 
+				z-index: 5;
+			}
+			.roth-menu > ul {
+				margin: 0;
+				padding: 0;
+			}
+			.roth-menu > ul > li {
+			}
+			.roth-menu > ul > li > a {
+				text-decoration: none;
+				outline: none;
+				color: black;
+				transition: background 0.15s ease-in, color 0.15s ease-in;
+			}
+			.roth-menu > ul > li:hover > a {
+				background: #0008;
+				color: white;
+			}
+			.roth-menu > ul > li:active > a {
+				background: #3338;
+				color: white;
+			}
+			.roth-menu > ul > li > a > span {
+				padding: 8px 12px 8px 12px;
+			}
+			.roth-menu > ul > li > a > span > svg {
+				margin: 0 8px 0 0;
+			}
+			.roth-menu > ul > li > a > span > span + svg {
+				margin: 0 0 0 8px;
+			}
+			
+			.roth-iconmenu {
+				/*if Mobile {*/
+				float: left;
+				/*}*/
+			}
+			.roth-iconmenu, .roth-iconmenu * {
+				display: inline-block;
+				position: relative;
+			}
+			.roth-iconmenu > a {
+				text-decoration: none;
+				outline: none;
+				color: black;
+				padding: 8px 12px 8px 12px;
+				transition: background 0.15s ease-in, color 0.15s ease-in;
+			}
+			.roth-iconmenu:hover > a {
+				background: #0008;
+				color: white;
+			}
+			.roth-iconmenu:active > a {
+				background: #3338;
+				color: white;
+			}
+			
+			.roth-dropmenu * {
+				display: inline-block;
+				position: relative;
+			}
+			.roth-dropmenu {
+				display: block;
+		        visibility: hidden;
+		        opacity: 0;
+		        transition: top 0s linear 0.85s, visibility 0s linear 0.85s, opacity 0.1s ease-out 0.75s, transform 0.1s ease-out 0.75s;
+		        transform: scale(0.8);
+				border: 1px solid silver;
+				background: linear-gradient(#fff 0%, #eee 3px, #eee calc(100% - 4px), #ddd 100%); 
+				position: absolute;
+				box-shadow: 1px 1px 3px black;
+				min-width: 100%;
+				z-index: 5;
+			}
+			.show > .roth-dropmenu {
+				visibility: visible;
+		        opacity: 1; 
+		        transition-delay: 0s;
+			}
+			.roth-dropmenu .roth-dropmenu {
+				left: 100%;
+				top: 0%;
+			}
+			.roth-dropmenu > ul {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+			}
+			.roth-dropmenu > ul > li {
+				width: 100%;
+			}
+			.roth-dropmenu > ul > li > a {
+				text-decoration: none;
+				outline: none;
+				color: black;
+				transition: background 0.15s ease-in, color 0.15s ease-in;
+				width: 100%;
+			}
+			.roth-dropmenu > ul > li:hover > a {
+				background: #0008;
+				color: white;
+			}
+			.roth-dropmenu > ul > li:active > a {
+				background: #3338;
+				color: white;
+			}
+			.roth-dropmenu > ul > li > a > span {
+				padding: 8px 12px 8px 12px;
+				white-space: nowrap;
+			}
+			.roth-dropmenu > ul > li > a > span > svg {
+				margin: 0 8px 0 0;
+			}			
+			.roth-dropmenu > ul > li > a > span > span + svg {
+				margin: 0 -8px 0 8px;
+			}
+			.right .roth-dropmenu > ul > li > a > span > span + svg {
+				margin: 0 8px 0 -8px;;
+			}
+			
+			.roth-menu > ul > li:hover > .roth-dropmenu, 
+			.roth-dropmenu > ul > li:hover > .roth-dropmenu,
+			.roth-iconmenu:hover > .roth-dropmenu {
+				visibility: visible;
+			    opacity: 1;
+		        transition-delay: 0s;
+		        transform: scale(1);
+		        
+			}
+			.roth-menu a:focus, .roth-dropmenu a:focus {
+				background: #a8f8;
+			}
+
+			.right { float: right; }
+			.right .roth-dropmenu {
+				right: 0;
+			}
+			
+			.roth-dropmenu > ul > li.separator {
+				display: block;
+				background: silver;
+				width: calc(100% - 20px);
+				height: 1px;
+				margin: 4px 10px;
+			}
+			.roth-dropmenu > ul > li.container {
+				display: block;
+				padding: 8px 12px;
+			}
+			.roth-dropmenu .item-icon {
+				text-align: center;
+				width: 0;
+			}
+			.roth-dropmenu.icons .item-icon {
+				width: 1.8rem;
+				margin: 0 0.3rem 0 -0.4rem;
+			}

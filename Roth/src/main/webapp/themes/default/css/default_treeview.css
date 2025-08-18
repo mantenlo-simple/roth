@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+.root {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+}
+.root .node {
+	width: 100%;
+	display: grid;
+	grid-template-columns: fit-content(0px) auto;
+}
+.root .node > div {
+	padding: 8px 8px 5px 8px
+}
+.root .node > div:nth-child(3) {
+	height: 0;
+	padding: 0;
+}
+.root .node > .children {
+	display: none;
+	padding: 0;
+	border-top: 1px solid #ddda;
+	border-left: 1px solid #ddda;
+}
+.root .node.expanded > .children {
+	display: block;
+}
+.toggle {
+	padding: 6px 10px;
+	background: #ddda;
+	border-radius: 4px;
+	display: inline-block;
+	cursor: pointer;
+}
+.toggle.empty {
+	cursor: default;
+	margin-bottom: 3px;
+}
+.node img {
+	vertical-align: -4px;
+	margin-top: 5px;
+}
+.toggle:hover {
+	background: #ccca;
+}
+.toggle:active {
+	background: #aaaa;
+}
+.toggle svg:first-child {
+	display: block;
+}
+.toggle svg:last-child {
+	display: none;
+}
+.expanded > div > .toggle {
+	padding: 6px 9px;
+}
+.expanded > div > .toggle svg:first-child {
+	display: none;
+}
+.expanded > div > .toggle svg:last-child {
+	display: block;
+}

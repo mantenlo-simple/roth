@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/*
+Copyright 2010 James M. Payne
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+@font-face{font-family:'roboto';src:url('../fonts/roboto/Roboto-Thin.woff') format('woff');font-weight:100;font-style: normal;}
+@font-face{font-family:'roboto';src:url('../fonts/roboto/Roboto-ThinItalic.woff') format('woff');font-weight:100;font-style:italic;}
+@font-face{font-family:'roboto';src:url('../fonts/roboto/Roboto-Light.woff') format('woff');font-weight:300;font-style:normal;}
+@font-face{font-family:'roboto';src:url('../fonts/roboto/Roboto-LightItalic.woff') format('woff');font-weight:300;font-style:italic;}
+@font-face{font-family:'roboto';src:url('../fonts/roboto/Roboto-Regular.woff') format('woff');font-weight:normal;/*400*/font-style:normal;}
+@font-face{font-family:'roboto';src:url('../fonts/roboto/Roboto-Italic.woff') format('woff');font-weight:normal;/*400*/font-style:italic;}
+@font-face{font-family:'roboto';src:url('../fonts/roboto/Roboto-Medium.woff') format('woff');font-weight:500;font-style:normal;}
+@font-face{font-family:'roboto';src:url('../fonts/roboto/Roboto-MediumItalic.woff') format('woff');font-weight:500;font-style:italic;}
+@font-face{font-family:'roboto';src:url('../fonts/roboto/Roboto-Bold.woff') format('woff');font-weight: bold;/*700*/font-style:normal;}
+@font-face{font-family:'roboto';src:url('../fonts/roboto/Roboto-BoldItalic.woff') format('woff');font-weight:bold;/*700*/font-style:italic;}
+@font-face{font-family:'roboto';src:url('../fonts/roboto/Roboto-Black.woff') format('woff');font-weight: 900;font-style:normal;}
+@font-face{font-family:'roboto';src:url('../fonts/roboto/Roboto-BlackItalic.woff') format('woff');font-weight:900;font-style:italic;}
+@font-face{font-family:'kells2';src:url('../fonts/kells2/kells2.woff') format('woff');font-weight:100;font-style: normal;}
+.CodeMirror { z-index: 0; }
+.rbreak { display: block; clear: both; height: 0px; }
+.fa-overlay>svg:nth-of-type(1) {
+}
+.fa-overlay>svg:nth-of-type(2) {
+	margin: 0 0 0 -1.2em;
+	font-size: 0.6em;
+	background: rgba(255,255,255,0.8);
+}
+.version {
+	font-family: Roboto; 
+	font-size: 0.4em; 
+	margin-top: 0.6em;
+}
+.subversion {
+	font-size: 0.6em; 
+	margin-top: 0.4em; 
+}
+.alpha { color: firebrick; }
+.beta { color: firebrick; }
+.rc { color: rgba(0, 96, 8, 0.7); }
+.splitPanes {
+	float: left;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.splitPanesTr {
+	clear: both;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+}
+.sizerV { 
+	clear: both;
+	width: 100%;
+	height: 0.7em;
+	overflow: hidden; 
+	box-sizing: border-box;
+}
+.sizerH {
+	float: left;
+	width: 0.7em;
+	height: 100%;
+	overflow: hidden; 
+	box-sizing: border-box;
+}
+.splitPanesTd {
+	float: left;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.splitSizerV {
+	height: 0.3em;
+	width: 100%;
+	border-top: 0.1em dotted silver; 
+	border-bottom: 0.1em dotted silver; 
+	margin: 0.2em 0; 
+	cursor: ns-resize;
+	box-sizing: border-box;
+}
+.splitSizerH {
+	height: 100%;
+	/* width: 0.1em; */ /* Browsers react badly to this for some reason. */
+	border-left: 0.1em dotted silver; 
+	border-right: 0.1em dotted silver; 
+	margin: 0 0.2em; 
+	cursor: ew-resize;
+	box-sizing: border-box;
+}
+.pwdExpire {
+	position: absolute;
+	top: 0;
+	width: 280px;
+	left: calc(50% - 140px);
+	background: #fdd;
+	color: #700;
+	padding: 6px 10px;
+	border-radius: 3px;
+	box-shadow: 1px 1px 3px #400;
+	font-size: 16px;
+	text-align: center;
+}
+
+/* For use with htmldiff.js */
+ins {
+    text-decoration: none;
+    background-color: #d4fcbc;
+}
+del {
+    text-decoration: line-through;
+    background-color: #fbb6c2;
+    color: #555;
+}

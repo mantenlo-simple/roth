@@ -1,0 +1,45 @@
+themeId=1
+themeName=Default
+customCssUri=/Roth/themes/default/css/default.css
+customJsUri=
+homeUri=
+homeUriViewType=I
+createBy=jpayne@default
+createdDts=2020-12-25 16:18:26
+updatedBy=jpayne@default
+updatedDts=2020-12-25 16:18:26
+{BREAK}
+James M. Payne   |   <version/>
+{BREAK}
+		<div class="portlet">
+			<div class="header">
+				<div class="logo">
+                  Roth<span style="font-family: Roboto; font-size: 0.4em; margin-top: 0.6em;"> 2025<span class="subversion">.1</span></span>
+				</div>
+				<div style="float: right; margin-top: 11px; text-align: right;">
+					<div class="desktoptitle">
+						<desktoptitle/>
+					</div>
+					<div class="rbreak" style="height: 12px;"></div>
+					<div class="portlettitle">
+						<portlettitle/>
+					</div>
+				</div>
+				<div class="rbreak"></div>
+			</div>
+			<div class="menu">
+				<menu/>
+				<usermenu/>
+			</div>
+			<div class="rbreak"></div>
+			<div class="content">
+<portletcontent/>			</div>
+			<div class="footer">
+				<copyright/>
+			</div>
+		</div>
+{BREAK}
+Home=http://www.ice-brook.com|_blank|0|admin@default|2010-10-12 00:00:00
+Contact=http://www.ice-brook.com/contact|_blank|1|admin@default|2010-10-12 00:00:00
+{BREAK}
+
