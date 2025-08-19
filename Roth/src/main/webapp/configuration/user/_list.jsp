@@ -24,7 +24,7 @@ limitations under the License.
 	<r:form action="/User/load" method="AJAX" onAjax="Roth.ajax.htmlCallback(request, 'userlist');">
 	    <r:wrap label=""><r:break height="4"/>Filter:</r:wrap>
 	    <c:if test="${rf:isUserInRole(pageContext, 'SecurityAdmin')}">
-		    <r:select label="Domain" dataSource="fDomainId" optionsDataSource="${requestScope.domains}" nullable="true" value="${param['fDomainId']}"
+		    <r:select label="Domain" dataSource="fDomainId" optionsDataSource="${requestScope.domains}" nullable="true" value="${param['fDomainId']}" width="93px"
 		              title="Limit list to users in the selected domain.  If no domain is selected, all available domains are shown."/>
 	    </c:if>
 	    <r:textBox label="User ID" dataSource="fUserid" style="width: 100px;" value="${param['fUserid']}" 
@@ -50,7 +50,7 @@ limitations under the License.
 		float: left; 
 		margin: 0 0 -1px 6px; 
 		background: #fffa; 
-		padding: 2px 2px 0 2px; 
+		padding: 1px 0 0 0; 
 		border-radius: 0.6em;
 		color: red;
 	}

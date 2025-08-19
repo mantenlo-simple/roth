@@ -33,7 +33,7 @@ limitations under the License.
 		                   title="If user is not supplied, then authentication will not be used."/>
 		        <r:textBox label="Password" dataSource="requestScope.smtp.password" width="161px"/>
 		        <r:break/>
-		        <r:select label="Mode" dataSource="requestScope.smtp.mode">
+		        <r:select label="Mode" dataSource="requestScope.smtp.mode" width="93px">
 		            <r:option caption="Simple" value="0"/>
 		            <r:option caption="SSL" value="1"/>
 		            <r:option caption="TLS" value="2"/>
@@ -52,11 +52,11 @@ limitations under the License.
 		                   title="If user is not supplied, then authentication will not be used."/>
 		        <r:textBox label="Password" dataSource="requestScope.mail.password" width="161px"/>
 		        <r:break/>
-		        <r:select label="Protocol" dataSource="requestScope.mail.protocol">
+		        <r:select label="Protocol" dataSource="requestScope.mail.protocol" width="93px">
 		            <r:option caption="POP3" value="pop3"/>
 		            <r:option caption="IMAP" value="imap"/>
 		        </r:select>
-		        <r:select label="Mode" dataSource="requestScope.mail.mode">
+		        <r:select label="Mode" dataSource="requestScope.mail.mode" width="97px">
 		            <r:option caption="Simple" value="0"/>
 		            <r:option caption="SSL" value="1"/>
 		            <r:option caption="TLS" value="2"/>

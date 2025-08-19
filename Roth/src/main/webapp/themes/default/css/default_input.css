@@ -450,25 +450,25 @@ textarea:hover {
 				border: 2px solid #884;
 				border-right: 2px solid #aa7;
 				border-bottom: 2px solid #aa7;
-				padding: 0 1px;
+				padding: 1px 1px;
 			}
 			.roth-check > input[type="checkbox"]:focus + label > div {
 				border: 2px solid #448;
 				border-right: 2px solid #77a;
 				border-bottom: 2px solid #77a;
-				padding: 0 1px;
+				padding: 1px 1px;
 			}
 			.roth-radio > input[type="radio"]:hover + label > div {
 				border: 2px solid #884;
 				border-right: 2px solid #aa7;
 				border-bottom: 2px solid #aa7;
-				padding: 2px;
+				padding: 2px 1px;
 			}
 			.roth-radio > input[type="radio"]:focus + label > div {
 				border: 2px solid #ccc /*#444*/;
 				border-right: 2px solid #aaa /*#777*/;
 				border-bottom: 2px solid #aaa /*#777*/;
-				padding: 2px;
+				padding: 2px 1px;
 			}
 			.roth-input > select {
 				background: transparent;
@@ -563,9 +563,9 @@ textarea:hover {
 				border-right: 1px solid #aaa /*#777*/;
 				border-bottom: 1px solid #aaa /*#777*/;
 				border-radius: 4px;
-				padding: 1px 2px;
+				padding: 2px 2px;
 				color: black;
-				font-size: 1rem;
+				font-size: 0.8rem;
 			}
 			.roth-check > input[type="checkbox"] + label > div > svg {
 				visibility: hidden;
@@ -613,7 +613,7 @@ textarea:hover {
 				border-right: 1px solid #aaa /*#777*/;
 				border-bottom: 1px solid #aaa /*#777*/;
 				border-radius: 50%;
-				padding: 3px;
+				padding: 3px 2px;
 				color: black;
 				font-size: 1rem;
 				display: block;

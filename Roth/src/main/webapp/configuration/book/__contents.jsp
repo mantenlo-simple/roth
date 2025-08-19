@@ -29,7 +29,7 @@ limitations under the License.
         <r:column caption="" dataSource="name" width="40" key="true" visible="false"/>
         <r:column caption="" dataSource="tableId" width="40" key="true" visible="false"/>
         <r:column caption="" dataSource="sequence" width="40" key="true" visible="false"/>
-        <r:column caption="" dataSource="tableName" width="2em" key="true">
+        <r:column caption="" dataSource="tableName" width="2.5em" key="true">
         	<r:icon iconName="${rowData.tableName eq 'book' ? 'book' : 'plug'}"/>
         </r:column>
         <r:column caption="Title" dataSource="title" width="175"/>
